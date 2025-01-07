@@ -1,0 +1,89 @@
+/* Basic reset and font styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background: #f6f6f6;
+    color: #333;
+  }
+  
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #007bff;
+    padding: 10px 20px;
+  }
+  
+  .logo h2 {
+    color: #fff;
+    margin: 0;
+  }
+  
+  nav ul {
+    list-style: none;
+    display: flex;
+  }
+  
+  nav ul li {
+    margin-left: 20px;
+  }
+  
+  nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  nav ul li a:hover {
+    text-decoration: underline;
+  }
+  
+  main {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 0 20px;
+    text-align: center;
+  }
+  
+  h1 {
+    margin-bottom: 20px;
+  }
+  
+  /* Container for inspection items */
+  .inspections-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .inspection-item {
+    background: #fff;
+    border-radius: 8px;
+    width: 200px;
+    padding: 30px;
+    cursor: pointer;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    transition: background 0.3s, transform 0.3s;
+  }
+  
+  /* Hover effect for inspection items */
+  .inspection-item:hover {
+    background: #e0e0e0;
+    transform: translateY(-3px);
+  }
+  
+  footer {
+    text-align: center;
+    padding: 10px;
+    background: #ccc;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  }
+  
