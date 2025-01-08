@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Boom Truck Crane Inspection</title>
+  <link rel="stylesheet" href="assets/boomtruckcrane.css">
+</head>
+<body>
+
+<div class="container">
+  <h1>Boom Truck Crane Inspection</h1>
+  
+  <!-- Top Info -->
+  <div class="inspection-info">
+    <div>
+      <label for="owner">Owner:</label>
+      <input type="text" id="owner" name="owner" placeholder="Owner Name">
+    </div>
+    <div>
+      <label for="inspectionDate">Date:</label>
+      <input type="date" id="inspectionDate" name="inspectionDate">
+    </div>
+    <div>
+      <label for="location">Location:</label>
+      <input type="text" id="location" name="location">
+    </div>
+    <div>
+      <label for="serviceStatus">Service Status:</label>
+      <input type="text" id="serviceStatus" name="serviceStatus" placeholder="In Service / Out of Service">
+    </div>
+    <div>
+      <label for="make">Make:</label>
+      <input type="text" id="make" name="make">
+    </div>
+    <div>
+      <label for="model">Model:</label>
+      <input type="text" id="model" name="model">
+    </div>
+    <div>
+      <label for="serialNumber">Serial #:</label>
+      <input type="text" id="serialNumber" name="serialNumber">
+    </div>
+    <div>
+      <label for="unitId">Unit ID:</label>
+      <input type="text" id="unitId" name="unitId">
+    </div>
+    <div>
+      <label for="maxCapacity">Max Capacity:</label>
+      <input type="text" id="maxCapacity" name="maxCapacity" placeholder="e.g., 40 Tons">
+    </div>
+    <div>
+      <label for="inspectorName">Inspector:</label>
+      <input type="text" id="inspectorName" name="inspectorName" placeholder="Inspector Name">
+    </div>
+  </div>
+
+  <form id="boomTruckForm">
+    <!-- Table of items: System/Part, Item/Description, Pass/Fail/NA, Remarks -->
+    <table>
+      <thead>
+        <tr>
+          <th>System/Part</th>
+          <th>Item / Description</th>
+          <th>Pass</th>
+          <th>Fail</th>
+          <th>N/A</th>
+          <th>Remarks</th>
+        </tr>
+      </thead>
+      <tbody>
+
+        <!-- =======================
+             BOOM ASSEMBLY
+        ======================= -->
+        <tr class="section-header">
+          <td colspan="6">Boom Assembly (Boom Truck Crane)</td>
+        </tr>
+        <!-- Telescoping Boom Sections -->
+        <tr class="sub-header">
+          <td colspan="6">Telescoping Boom Sections</td>
+        </tr>
+        <tr>
+          <td>Inner Sections</td>
+          <td>Sliding sections that extend within each other.</td>
+          <td><input type="checkbox" name="boom_inner_pass"></td>
+          <td><input type="checkbox" name="boom_inner_fail"></td>
+          <td><input type="checkbox" name="boom_inner_na"></td>
+          <td><input type="text" name="boom_inner_remarks"></td>
+        </tr>
+        <tr>
+          <td>Outer Section</td>
+          <td>The largest, non-sliding part of the boom.</td>
+          <td><input type="checkbox" name="boom_outer_pass"></td>
+          <td><input type="checkbox" name="boom_outer_fail"></td>
+          <td><input type="checkbox" name="boom_outer_na"></td>
+          <td><input type="text" name="boom_outer_remarks"></td>
+        </tr>
+        <tr>
+          <td>Wear Pads</td>
+          <td>Reduce friction & protect boom sections.</td>
+          <td><input type="checkbox" name="boom_wearpads_pass"></td>
+          <td><input type="checkbox" name="boom_wearpads_fail"></td>
+          <td><input type="checkbox" name="boom_wearpads_na"></td>
+          <td><input type="text" name="boom_wearpads_remarks"></td>
+        </tr>
+        
+        <!-- Boom Cylinder -->
+        <tr class="sub-header">
+          <td colspan="6">Boom Cylinder</td>
+        </tr>
+        <tr>
+          <td>Piston Rod</td>
+          <td>Extends/retracts to push/pull boom sections.</td>
+          <td><input type="checkbox" name="piston_rod_pass"></td>
+          <td><input type="checkbox" name="piston_rod_fail"></td>
+          <td><input type="checkbox" name="piston_rod_na"></td>
+          <td><input type="text" name="piston_rod_remarks"></td>
+        </tr>
+        <tr>
+          <td>Cylinder Barrel</td>
+          <td>Houses hydraulic fluid & piston.</td>
+          <td><input type="checkbox" name="cylinder_barrel_pass"></td>
+          <td><input type="checkbox" name="cylinder_barrel_fail"></td>
+          <td><input type="checkbox" name="cylinder_barrel_na"></td>
+          <td><input type="text" name="cylinder_barrel_remarks"></td>
+        </tr>
+
+        <!-- Boom Head -->
+        <tr class="sub-header">
+          <td colspan="6">Boom Head</td>
+        </tr>
+        <tr>
+          <td>Sheaves (Pulleys)</td>
+          <td>Grooved wheels guiding the wire rope.</td>
+          <td><input type="checkbox" name="boom_head_sheaves_pass"></td>
+          <td><input type="checkbox" name="boom_head_sheaves_fail"></td>
+          <td><input type="checkbox" name="boom_head_sheaves_na"></td>
+          <td><input type="text" name="boom_head_sheaves_remarks"></td>
+        </tr>
+        <tr>
+          <td>Boom Point Roller Bearings</td>
+          <td>Reduce friction at the boom tip.</td>
+          <td><input type="checkbox" name="boom_point_roller_pass"></td>
+          <td><input type="checkbox" name="boom_point_roller_fail"></td>
+          <td><input type="checkbox" name="boom_point_roller_na"></td>
+          <td><input type="text" name="boom_point_roller_remarks"></td>
+        </tr>
+        <tr>
+          <td>Load Block Attachments</td>
+          <td>Connects load block/hook assembly.</td>
+          <td><input type="checkbox" name="load_block_attachments_pass"></td>
+          <td><input type="checkbox" name="load_block_attachments_fail"></td>
+          <td><input type="checkbox" name="load_block_attachments_na"></td>
+          <td><input type="text" name="load_block_attachments_remarks"></td>
+        </tr>
+
+        <!-- Boom Base Section -->
+        <tr class="sub-header">
+          <td colspan="6">Boom Base Section</td>
+        </tr>
+        <tr>
+          <td>Mounting Pins</td>
+          <td>Connects boom to turntable.</td>
+          <td><input type="checkbox" name="mounting_pins_pass"></td>
+          <td><input type="checkbox" name="mounting_pins_fail"></td>
+          <td><input type="checkbox" name="mounting_pins_na"></td>
+          <td><input type="text" name="mounting_pins_remarks"></td>
+        </tr>
+        <tr>
+          <td>Hydraulic Connections</td>
+          <td>Supply fluid for extension/retraction.</td>
+          <td><input type="checkbox" name="base_hydraulic_connections_pass"></td>
+          <td><input type="checkbox" name="base_hydraulic_connections_fail"></td>
+          <td><input type="checkbox" name="base_hydraulic_connections_na"></td>
+          <td><input type="text" name="base_hydraulic_connections_remarks"></td>
+        </tr>
+        <tr>
+          <td>Boom Stops</td>
+          <td>Prevent overextension/improper angle.</td>
+          <td><input type="checkbox" name="boom_stops_pass"></td>
+          <td><input type="checkbox" name="boom_stops_fail"></td>
+          <td><input type="checkbox" name="boom_stops_na"></td>
+          <td><input type="text" name="boom_stops_remarks"></td>
+        </tr>
+
+        <!-- Extension Jibs -->
+        <tr class="sub-header">
+          <td colspan="6">Extension Jibs</td>
+        </tr>
+        <tr>
+          <td>Fixed Jibs</td>
+          <td>Permanently attached extension.</td>
+          <td><input type="checkbox" name="fixed_jibs_pass"></td>
+          <td><input type="checkbox" name="fixed_jibs_fail"></td>
+          <td><input type="checkbox" name="fixed_jibs_na"></td>
+          <td><input type="text" name="fixed_jibs_remarks"></td>
+        </tr>
+        <tr>
+          <td>Luffing Jibs</td>
+          <td>Adjustable angle extensions.</td>
+          <td><input type="checkbox" name="luffing_jibs_pass"></td>
+          <td><input type="checkbox" name="luffing_jibs_fail"></td>
+          <td><input type="checkbox" name="luffing_jibs_na"></td>
+          <td><input type="text" name="luffing_jibs_remarks"></td>
+        </tr>
+        <tr>
+          <td>Pin Connections</td>
+          <td>Fasteners to attach jibs to boom.</td>
+          <td><input type="checkbox" name="jib_pin_connections_pass"></td>
+          <td><input type="checkbox" name="jib_pin_connections_fail"></td>
+          <td><input type="checkbox" name="jib_pin_connections_na"></td>
+          <td><input type="text" name="jib_pin_connections_remarks"></td>
+        </tr>
+
+        <!-- Sheaves -->
+        <tr class="sub-header">
+          <td colspan="6">Sheaves</td>
+        </tr>
+        <tr>
+          <td>Groove Lining</td>
+          <td>Prevents wire rope wear.</td>
+          <td><input type="checkbox" name="groove_lining_pass"></td>
+          <td><input type="checkbox" name="groove_lining_fail"></td>
+          <td><input type="checkbox" name="groove_lining_na"></td>
+          <td><input type="text" name="groove_lining_remarks"></td>
+        </tr>
+        <tr>
+          <td>Sheave Bearings</td>
+          <td>Allow smooth rotation.</td>
+          <td><input type="checkbox" name="sheave_bearings_pass"></td>
+          <td><input type="checkbox" name="sheave_bearings_fail"></td>
+          <td><input type="checkbox" name="sheave_bearings_na"></td>
+          <td><input type="text" name="sheave_bearings_remarks"></td>
+        </tr>
+
+        <!-- ============== SUPERSTRUCTURE ============== -->
+        <tr class="section-header">
+          <td colspan="6">Superstructure</td>
+        </tr>
+        <!-- Turntable -->
+        <tr class="sub-header">
+          <td colspan="6">Turntable</td>
+        </tr>
+        <tr>
+          <td>Rotex Bearing</td>
+          <td>Supports rotation between carrier & superstructure.</td>
+          <td><input type="checkbox" name="rotex_bearing_pass"></td>
+          <td><input type="checkbox" name="rotex_bearing_fail"></td>
+          <td><input type="checkbox" name="rotex_bearing_na"></td>
+          <td><input type="text" name="rotex_bearing_remarks"></td>
+        </tr>
+        <tr>
+          <td>Drive Motors</td>
+          <td>Powers rotation mechanism.</td>
+          <td><input type="checkbox" name="turntable_drive_motors_pass"></td>
+          <td><input type="checkbox" name="turntable_drive_motors_fail"></td>
+          <td><input type="checkbox" name="turntable_drive_motors_na"></td>
+          <td><input type="text" name="turntable_drive_motors_remarks"></td>
+        </tr>
+        <tr>
+          <td>Lubrication Channels</td>
+          <td>Ensure smooth & long-lasting operation.</td>
+          <td><input type="checkbox" name="turntable_lubrication_pass"></td>
+          <td><input type="checkbox" name="turntable_lubrication_fail"></td>
+          <td><input type="checkbox" name="turntable_lubrication_na"></td>
+          <td><input type="text" name="turntable_lubrication_remarks"></td>
+        </tr>
+
+        <!-- Operator’s Cab -->
+        <tr class="sub-header">
+          <td colspan="6">Operator’s Cab</td>
+        </tr>
+        <tr>
+          <td>Control Levers</td>
+          <td>Operate boom, winch, & rotation.</td>
+          <td><input type="checkbox" name="control_levers_pass"></td>
+          <td><input type="checkbox" name="control_levers_fail"></td>
+          <td><input type="checkbox" name="control_levers_na"></td>
+          <td><input type="text" name="control_levers_remarks"></td>
+        </tr>
+        <tr>
+          <td>Digital Display Panels</td>
+          <td>Show load data & angles.</td>
+          <td><input type="checkbox" name="display_panels_pass"></td>
+          <td><input type="checkbox" name="display_panels_fail"></td>
+          <td><input type="checkbox" name="display_panels_na"></td>
+          <td><input type="text" name="display_panels_remarks"></td>
+        </tr>
+        <tr>
+          <td>Cab Windows</td>
+          <td>Reinforced glass for safety & visibility.</td>
+          <td><input type="checkbox" name="cab_windows_pass"></td>
+          <td><input type="checkbox" name="cab_windows_fail"></td>
+          <td><input type="checkbox" name="cab_windows_na"></td>
+          <td><input type="text" name="cab_windows_remarks"></td>
+        </tr>
+        <tr>
+          <td>Climate Controls</td>
+          <td>Heating & cooling for operator comfort.</td>
+          <td><input type="checkbox" name="climate_controls_pass"></td>
+          <td><input type="checkbox" name="climate_controls_fail"></td>
+          <td><input type="checkbox" name="climate_controls_na"></td>
+          <td><input type="text" name="climate_controls_remarks"></td>
+        </tr>
+
+        <!-- Counterweights -->
+        <tr class="sub-header">
+          <td colspan="6">Counterweights</td>
+        </tr>
+        <tr>
+          <td>Stackable Weights</td>
+          <td>Modular sections for different lifting conditions.</td>
+          <td><input type="checkbox" name="stackable_weights_pass"></td>
+          <td><input type="checkbox" name="stackable_weights_fail"></td>
+          <td><input type="checkbox" name="stackable_weights_na"></td>
+          <td><input type="text" name="stackable_weights_remarks"></td>
+        </tr>
+        <tr>
+          <td>Attachment Mechanism</td>
+          <td>Pins or hydraulics for securing weights.</td>
+          <td><input type="checkbox" name="counterweight_attachment_pass"></td>
+          <td><input type="checkbox" name="counterweight_attachment_fail"></td>
+          <td><input type="checkbox" name="counterweight_attachment_na"></td>
+          <td><input type="text" name="counterweight_attachment_remarks"></td>
+        </tr>
+        <tr>
+          <td>Lifting Eyes</td>
+          <td>For transporting weights.</td>
+          <td><input type="checkbox" name="lifting_eyes_pass"></td>
+          <td><input type="checkbox" name="lifting_eyes_fail"></td>
+          <td><input type="checkbox" name="lifting_eyes_na"></td>
+          <td><input type="text" name="lifting_eyes_remarks"></td>
+        </tr>
+
+        <!-- ============== CARRIER (CHASSIS) ============== -->
+        <tr class="section-header">
+          <td colspan="6">Carrier (Truck Chassis)</td>
+        </tr>
+        <tr class="sub-header">
+          <td colspan="6">Frame / Axles / Outriggers</td>
+        </tr>
+        <tr>
+          <td>Frame Rails</td>
+          <td>Reinforced structure supporting the crane.</td>
+          <td><input type="checkbox" name="frame_rails_pass"></td>
+          <td><input type="checkbox" name="frame_rails_fail"></td>
+          <td><input type="checkbox" name="frame_rails_na"></td>
+          <td><input type="text" name="frame_rails_remarks"></td>
+        </tr>
+        <tr>
+          <td>Axles</td>
+          <td>Distribute weight & support wheels.</td>
+          <td><input type="checkbox" name="axles_pass"></td>
+          <td><input type="checkbox" name="axles_fail"></td>
+          <td><input type="checkbox" name="axles_na"></td>
+          <td><input type="text" name="axles_remarks"></td>
+        </tr>
+        <tr>
+          <td>Telescopic Arms</td>
+          <td>Extendable arms for stability (outriggers).</td>
+          <td><input type="checkbox" name="outriggers_telescopic_pass"></td>
+          <td><input type="checkbox" name="outriggers_telescopic_fail"></td>
+          <td><input type="checkbox" name="outriggers_telescopic_na"></td>
+          <td><input type="text" name="outriggers_telescopic_remarks"></td>
+        </tr>
+        <tr>
+          <td>Foot Pads</td>
+          <td>Distribute weight on ground (outriggers).</td>
+          <td><input type="checkbox" name="outriggers_footpads_pass"></td>
+          <td><input type="checkbox" name="outriggers_footpads_fail"></td>
+          <td><input type="checkbox" name="outriggers_footpads_na"></td>
+          <td><input type="text" name="outriggers_footpads_remarks"></td>
+        </tr>
+        <tr>
+          <td>Hydraulic Cylinders</td>
+          <td>Extend/retract outriggers.</td>
+          <td><input type="checkbox" name="outriggers_cylinders_pass"></td>
+          <td><input type="checkbox" name="outriggers_cylinders_fail"></td>
+          <td><input type="checkbox" name="outriggers_cylinders_na"></td>
+          <td><input type="text" name="outriggers_cylinders_remarks"></td>
+        </tr>
+
+        <!-- Suspension System -->
+        <tr class="sub-header">
+          <td colspan="6">Suspension System</td>
+        </tr>
+        <tr>
+          <td>Leaf Springs</td>
+          <td>Supports weight of the crane.</td>
+          <td><input type="checkbox" name="leaf_springs_pass"></td>
+          <td><input type="checkbox" name="leaf_springs_fail"></td>
+          <td><input type="checkbox" name="leaf_springs_na"></td>
+          <td><input type="text" name="leaf_springs_remarks"></td>
+        </tr>
+        <tr>
+          <td>Shock Absorbers</td>
+          <td>Minimize vibrations during travel.</td>
+          <td><input type="checkbox" name="shock_absorbers_pass"></td>
+          <td><input type="checkbox" name="shock_absorbers_fail"></td>
+          <td><input type="checkbox" name="shock_absorbers_na"></td>
+          <td><input type="text" name="shock_absorbers_remarks"></td>
+        </tr>
+
+        <!-- Drive Engine -->
+        <tr class="sub-header">
+          <td colspan="6">Drive Engine</td>
+        </tr>
+        <tr>
+          <td>Diesel Engine</td>
+          <td>Provides power for movement.</td>
+          <td><input type="checkbox" name="diesel_engine_pass"></td>
+          <td><input type="checkbox" name="diesel_engine_fail"></td>
+          <td><input type="checkbox" name="diesel_engine_na"></td>
+          <td><input type="text" name="diesel_engine_remarks"></td>
+        </tr>
+        <tr>
+          <td>Fuel Tank</td>
+          <td>Stores diesel fuel.</td>
+          <td><input type="checkbox" name="fuel_tank_pass"></td>
+          <td><input type="checkbox" name="fuel_tank_fail"></td>
+          <td><input type="checkbox" name="fuel_tank_na"></td>
+          <td><input type="text" name="fuel_tank_remarks"></td>
+        </tr>
+
+        <!-- Transmission -->
+        <tr class="sub-header">
+          <td colspan="6">Transmission</td>
+        </tr>
+        <tr>
+          <td>Manual/Auto Gearbox</td>
+          <td>Transfers engine power to wheels.</td>
+          <td><input type="checkbox" name="gearbox_pass"></td>
+          <td><input type="checkbox" name="gearbox_fail"></td>
+          <td><input type="checkbox" name="gearbox_na"></td>
+          <td><input type="text" name="gearbox_remarks"></td>
+        </tr>
+        <tr>
+          <td>Power Take-Off (PTO)</td>
+          <td>Redirects engine power for hydraulics.</td>
+          <td><input type="checkbox" name="pto_pass"></td>
+          <td><input type="checkbox" name="pto_fail"></td>
+          <td><input type="checkbox" name="pto_na"></td>
+          <td><input type="text" name="pto_remarks"></td>
+        </tr>
+
+        <!-- ============== LOAD HANDLING EQUIPMENT ============== -->
+        <tr class="section-header">
+          <td colspan="6">Load Handling Equipment</td>
+        </tr>
+        <tr class="sub-header">
+          <td colspan="6">Load Hook</td>
+        </tr>
+        <tr>
+          <td>Safety Latch</td>
+          <td>Prevents load from slipping.</td>
+          <td><input type="checkbox" name="hook_safety_latch_pass"></td>
+          <td><input type="checkbox" name="hook_safety_latch_fail"></td>
+          <td><input type="checkbox" name="hook_safety_latch_na"></td>
+          <td><input type="text" name="hook_safety_latch_remarks"></td>
+        </tr>
+        <tr>
+          <td>Swivel Mechanism</td>
+          <td>Allows rotation under load.</td>
+          <td><input type="checkbox" name="hook_swivel_mech_pass"></td>
+          <td><input type="checkbox" name="hook_swivel_mech_fail"></td>
+          <td><input type="checkbox" name="hook_swivel_mech_na"></td>
+          <td><input type="text" name="hook_swivel_mech_remarks"></td>
+        </tr>
+
+        <!-- Load Line (Wire Rope) -->
+        <tr class="sub-header">
+          <td colspan="6">Load Line (Wire Rope)</td>
+        </tr>
+        <tr>
+          <td>Steel Core</td>
+          <td>Strength/flexibility for wire rope.</td>
+          <td><input type="checkbox" name="wire_rope_core_pass"></td>
+          <td><input type="checkbox" name="wire_rope_core_fail"></td>
+          <td><input type="checkbox" name="wire_rope_core_na"></td>
+          <td><input type="text" name="wire_rope_core_remarks"></td>
+        </tr>
+        <tr>
+          <td>Outer Strands</td>
+          <td>Protect core and enhance durability.</td>
+          <td><input type="checkbox" name="wire_rope_strands_pass"></td>
+          <td><input type="checkbox" name="wire_rope_strands_fail"></td>
+          <td><input type="checkbox" name="wire_rope_strands_na"></td>
+          <td><input type="text" name="wire_rope_strands_remarks"></td>
+        </tr>
+
+        <!-- Overhaul Ball -->
+        <tr class="sub-header">
+          <td colspan="6">Overhaul Ball</td>
+        </tr>
+        <tr>
+          <td>Ball Weight</td>
+          <td>Keeps wire rope taut.</td>
+          <td><input type="checkbox" name="overhaul_ball_weight_pass"></td>
+          <td><input type="checkbox" name="overhaul_ball_weight_fail"></td>
+          <td><input type="checkbox" name="overhaul_ball_weight_na"></td>
+          <td><input type="text" name="overhaul_ball_weight_remarks"></td>
+        </tr>
+        <tr>
+          <td>Swivel Assembly</td>
+          <td>Prevents rope twisting.</td>
+          <td><input type="checkbox" name="overhaul_ball_swivel_pass"></td>
+          <td><input type="checkbox" name="overhaul_ball_swivel_fail"></td>
+          <td><input type="checkbox" name="overhaul_ball_swivel_na"></td>
+          <td><input type="text" name="overhaul_ball_swivel_remarks"></td>
+        </tr>
+
+        <!-- Rigging Hardware -->
+        <tr class="sub-header">
+          <td colspan="6">Rigging Hardware</td>
+        </tr>
+        <tr>
+          <td>Shackles</td>
+          <td>U-shaped fasteners for loads.</td>
+          <td><input type="checkbox" name="shackles_pass"></td>
+          <td><input type="checkbox" name="shackles_fail"></td>
+          <td><input type="checkbox" name="shackles_na"></td>
+          <td><input type="text" name="shackles_remarks"></td>
+        </tr>
+        <tr>
+          <td>Slings</td>
+          <td>Nylon/wire rope/chain straps.</td>
+          <td><input type="checkbox" name="slings_pass"></td>
+          <td><input type="checkbox" name="slings_fail"></td>
+          <td><input type="checkbox" name="slings_na"></td>
+          <td><input type="text" name="slings_remarks"></td>
+        </tr>
+        <tr>
+          <td>Spreader Bars</td>
+          <td>Distribute load weight horizontally.</td>
+          <td><input type="checkbox" name="spreader_bars_pass"></td>
+          <td><input type="checkbox" name="spreader_bars_fail"></td>
+          <td><input type="checkbox" name="spreader_bars_na"></td>
+          <td><input type="text" name="spreader_bars_remarks"></td>
+        </tr>
+
+        <!-- ============== HYDRAULIC SYSTEMS ============== -->
+        <tr class="section-header">
+          <td colspan="6">Hydraulic Systems</td>
+        </tr>
+        <tr class="sub-header">
+          <td colspan="6">Hydraulic Cylinders</td>
+        </tr>
+        <tr>
+          <td>Seals and Gaskets</td>
+          <td>Prevent hydraulic leaks.</td>
+          <td><input type="checkbox" name="hyd_cyl_seals_pass"></td>
+          <td><input type="checkbox" name="hyd_cyl_seals_fail"></td>
+          <td><input type="checkbox" name="hyd_cyl_seals_na"></td>
+          <td><input type="text" name="hyd_cyl_seals_remarks"></td>
+        </tr>
+        <tr>
+          <td>Cylinder Rod Ends</td>
+          <td>Connect to other components.</td>
+          <td><input type="checkbox" name="cyl_rod_ends_pass"></td>
+          <td><input type="checkbox" name="cyl_rod_ends_fail"></td>
+          <td><input type="checkbox" name="cyl_rod_ends_na"></td>
+          <td><input type="text" name="cyl_rod_ends_remarks"></td>
+        </tr>
+        <tr>
+          <td>Hydraulic Fluid Ports</td>
+          <td>Entry/exit for fluid.</td>
+          <td><input type="checkbox" name="cyl_fluid_ports_pass"></td>
+          <td><input type="checkbox" name="cyl_fluid_ports_fail"></td>
+          <td><input type="checkbox" name="cyl_fluid_ports_na"></td>
+          <td><input type="text" name="cyl_fluid_ports_remarks"></td>
+        </tr>
+
+        <tr class="sub-header">
+          <td colspan="6">Hydraulic Reservoir</td>
+        </tr>
+        <tr>
+          <td>Tank Filters</td>
+          <td>Clean the hydraulic fluid.</td>
+          <td><input type="checkbox" name="tank_filters_pass"></td>
+          <td><input type="checkbox" name="tank_filters_fail"></td>
+          <td><input type="checkbox" name="tank_filters_na"></td>
+          <td><input type="text" name="tank_filters_remarks"></td>
+        </tr>
+        <tr>
+          <td>Sight Gauge</td>
+          <td>Displays fluid levels.</td>
+          <td><input type="checkbox" name="sight_gauge_pass"></td>
+          <td><input type="checkbox" name="sight_gauge_fail"></td>
+          <td><input type="checkbox" name="sight_gauge_na"></td>
+          <td><input type="text" name="sight_gauge_remarks"></td>
+        </tr>
+
+        <tr class="sub-header">
+          <td colspan="6">Hydraulic Lines</td>
+        </tr>
+        <tr>
+          <td>High-Pressure Hoses</td>
+          <td>Transport fluid to cylinders.</td>
+          <td><input type="checkbox" name="hyd_lines_hoses_pass"></td>
+          <td><input type="checkbox" name="hyd_lines_hoses_fail"></td>
+          <td><input type="checkbox" name="hyd_lines_hoses_na"></td>
+          <td><input type="text" name="hyd_lines_hoses_remarks"></td>
+        </tr>
+        <tr>
+          <td>Fittings/Couplings</td>
+          <td>Secure hydraulic connections.</td>
+          <td><input type="checkbox" name="hyd_lines_fittings_pass"></td>
+          <td><input type="checkbox" name="hyd_lines_fittings_fail"></td>
+          <td><input type="checkbox" name="hyd_lines_fittings_na"></td>
+          <td><input type="text" name="hyd_lines_fittings_remarks"></td>
+        </tr>
+
+        <!-- ============== SAFETY & MONITORING SYSTEMS ============== -->
+        <tr class="section-header">
+          <td colspan="6">Safety and Monitoring Systems</td>
+        </tr>
+        <tr class="sub-header">
+          <td colspan="6">Load Moment Indicator (LMI)</td>
+        </tr>
+        <tr>
+          <td>Sensors</td>
+          <td>Measure load weight & angle.</td>
+          <td><input type="checkbox" name="lmi_sensors_pass"></td>
+          <td><input type="checkbox" name="lmi_sensors_fail"></td>
+          <td><input type="checkbox" name="lmi_sensors_na"></td>
+          <td><input type="text" name="lmi_sensors_remarks"></td>
+        </tr>
+        <tr>
+          <td>Display Unit</td>
+          <td>Shows safety alerts & status.</td>
+          <td><input type="checkbox" name="lmi_display_pass"></td>
+          <td><input type="checkbox" name="lmi_display_fail"></td>
+          <td><input type="checkbox" name="lmi_display_na"></td>
+          <td><input type="text" name="lmi_display_remarks"></td>
+        </tr>
+        <tr class="sub-header">
+          <td colspan="6">Anti-Two-Block Device</td>
+        </tr>
+        <tr>
+          <td>Proximity Switch</td>
+          <td>Detects block nearing boom head.</td>
+          <td><input type="checkbox" name="anti_twoblock_switch_pass"></td>
+          <td><input type="checkbox" name="anti_twoblock_switch_fail"></td>
+          <td><input type="checkbox" name="anti_twoblock_switch_na"></td>
+          <td><input type="text" name="anti_twoblock_switch_remarks"></td>
+        </tr>
+        <tr>
+          <td>Alarm System</td>
+          <td>Alerts operator to prevent collision.</td>
+          <td><input type="checkbox" name="anti_twoblock_alarm_pass"></td>
+          <td><input type="checkbox" name="anti_twoblock_alarm_fail"></td>
+          <td><input type="checkbox" name="anti_twoblock_alarm_na"></td>
+          <td><input type="text" name="anti_twoblock_alarm_remarks"></td>
+        </tr>
+        <tr class="sub-header">
+          <td colspan="6">Outrigger Pressure Sensors</td>
+        </tr>
+        <tr>
+          <td>Load Cells</td>
+          <td>Measure force on each outrigger.</td>
+          <td><input type="checkbox" name="outrigger_load_cells_pass"></td>
+          <td><input type="checkbox" name="outrigger_load_cells_fail"></td>
+          <td><input type="checkbox" name="outrigger_load_cells_na"></td>
+          <td><input type="text" name="outrigger_load_cells_remarks"></td>
+        </tr>
+        <tr class="sub-header">
+          <td colspan="6">Crane Level Indicator</td>
+        </tr>
+        <tr>
+          <td>Bubble Level</td>
+          <td>Simple leveling tool.</td>
+          <td><input type="checkbox" name="crane_bubble_level_pass"></td>
+          <td><input type="checkbox" name="crane_bubble_level_fail"></td>
+          <td><input type="checkbox" name="crane_bubble_level_na"></td>
+          <td><input type="text" name="crane_bubble_level_remarks"></td>
+        </tr>
+        <tr>
+          <td>Digital Level</td>
+          <td>More precise readings.</td>
+          <td><input type="checkbox" name="crane_digital_level_pass"></td>
+          <td><input type="checkbox" name="crane_digital_level_fail"></td>
+          <td><input type="checkbox" name="crane_digital_level_na"></td>
+          <td><input type="text" name="crane_digital_level_remarks"></td>
+        </tr>
+        <tr class="sub-header">
+          <td colspan="6">Radius Indicator</td>
+        </tr>
+        <tr>
+          <td>Mechanical Arm/Sensor</td>
+          <td>Measures distance from load to center.</td>
+          <td><input type="checkbox" name="radius_indicator_pass"></td>
+          <td><input type="checkbox" name="radius_indicator_fail"></td>
+          <td><input type="checkbox" name="radius_indicator_na"></td>
+          <td><input type="text" name="radius_indicator_remarks"></td>
+        </tr>
+
+      </tbody>
+    </table>
+
+    <!-- Signature & Emails -->
+    <div class="signature-section">
+      <label for="signature">Signature:</label>
+      <input type="text" id="signature" name="signature">
+      <label for="email1">Email #1:</label>
+      <input type="email" id="email1" name="email1">
+      <label for="email2">Email #2:</label>
+      <input type="email" id="email2" name="email2">
+    </div>
+
+    <!-- Submit button -->
+    <div class="submit-section">
+      <button type="submit">Submit Inspection</button>
+    </div>
+  </form>
+</div>
+
+<script src="assets/scriptBoomTruck.js"></script>
+</body>
+</html>

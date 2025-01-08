@@ -1,0 +1,133 @@
+/* boomtruckcranereport.css */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background: #f0f0f0;
+    padding: 10px;
+    font-size: 0.85rem; /* Slightly smaller for compact */
+  }
+  
+  .report-container {
+    background: #fff;
+    padding: 10px;
+    max-width: 1100px;
+    margin: 0 auto;
+    border: 1px solid #ccc;
+  }
+  
+  .report-container h1 {
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 1rem;
+  }
+  
+  /* Basic info grid */
+  .basic-info {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 8px;
+    column-gap: 20px;
+    margin-bottom: 10px;
+  }
+  .basic-info strong {
+    width: 120px;
+    display: inline-block;
+  }
+  
+  /* Two-column sections container */
+  .two-column-sections {
+    column-count: 2; 
+    column-gap: 20px;
+    /* We want sections to avoid breaking in the middle */
+  }
+  
+  .inspection-section {
+    break-inside: avoid;
+    margin-bottom: 16px;
+  }
+  
+  .inspection-section h2 {
+    background: #0077b6;
+    color: #fff;
+    padding: 4px 6px;
+    font-size: 0.9rem;
+    margin-bottom: 4px;
+  }
+  
+  .inspection-section h3 {
+    font-size: 0.85rem;
+    margin: 6px 0;
+  }
+  
+  /* Tables in each section */
+  .inspection-section table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 8px;
+    font-size: 0.8rem;
+  }
+  
+  .inspection-section thead th {
+    background-color: #f2f2f2;
+    text-align: left;
+    border: 1px solid #ccc;
+    padding: 4px;
+    font-weight: bold;
+  }
+  
+  .inspection-section tbody td {
+    border: 1px solid #ccc;
+    padding: 4px;
+    vertical-align: top;
+  }
+  
+  /* Signature / Emails */
+  .signature-section {
+    margin-top: 10px;
+    line-height: 1.4;
+    font-size: 0.85rem;
+  }
+  
+  .print-btn-container {
+    text-align: center;
+    margin-top: 10px;
+  }
+  
+  #printBtn {
+    background: #0077b6;
+    color: #fff;
+    border: none;
+    padding: 6px 12px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    border-radius: 4px;
+  }
+  #printBtn:hover {
+    background: #005f8a;
+  }
+  
+  /* Print styles */
+  @media print {
+    .print-btn-container {
+      display: none;
+    }
+    body {
+      background: #fff;
+      margin: 0;
+    }
+    .report-container {
+      border: none;
+      margin: 0;
+      padding: 0;
+    }
+    @page {
+      size: letter;
+      margin: 0.5in; /* Adjust for duplex printing margins */
+    }
+  }
+  

@@ -1,0 +1,914 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Final Report - Telescoping Boom Crane</title>
+  <!-- Link to external CSS -->
+  <link rel="stylesheet" href="telescopingreport.css">
+  <style>
+    /* Ensure the Deficiencies/Hazards section starts on a new printed page. */
+    @media print {
+      #deficienciesPage {
+        page-break-before: always;
+      }
+    }
+    /* Optional: Some styling for the photos */
+    #photosContainer img {
+      max-width: 300px;
+      margin: 1rem;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+<div class="report-container">
+  <h1>Telescoping Boom Crane Inspection - Final Report</h1>
+  
+  <!-- Basic Company / Crane Info -->
+  <section class="basic-info">
+    <div><strong>Owner:</strong> <span id="owner"></span></div>
+    <div><strong>Date:</strong> <span id="inspectionDate"></span></div>
+    <div><strong>Location:</strong> <span id="location"></span></div>
+    <div><strong>Service Status:</strong> <span id="serviceStatus"></span></div>
+    <div><strong>Make:</strong> <span id="make"></span></div>
+    <div><strong>Model:</strong> <span id="model"></span></div>
+    <div><strong>Serial Number:</strong> <span id="serialNumber"></span></div>
+    <div><strong>Unit ID:</strong> <span id="unitId"></span></div>
+    <div><strong>Max. Capacity:</strong> <span id="maxCapacity"></span></div>
+    <div><strong>Inspector:</strong> <span id="inspectorName"></span></div>
+  </section>
+
+  <hr>
+
+  <!-- The full inspection table with all sections -->
+  <table>
+    <thead>
+      <tr>
+        <th>System/Part</th>
+        <th>Item / Description</th>
+        <th>Pass</th>
+        <th>Fail</th>
+        <th>N/A</th>
+        <th>Remarks</th>
+        <th>Photo</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- (Shortened here for brevity, but keep your entire existing table structure) -->
+      <!-- The IDs below must match exactly what we set in telescopingreport.js -->
+      <!-- Example for boom inner sections: -->
+      <tr class="section-header">
+        <td colspan="7">Boom Assembly (Telescoping Boom)</td>
+      </tr>
+      <tr class="sub-header">
+        <td colspan="7">Telescoping Boom Sections</td>
+      </tr>
+      <tr>
+        <td>Inner Sections</td>
+        <td>Sliding sections that extend within each other.</td>
+        <td><span id="boom_inner_pass"></span></td>
+        <td><span id="boom_inner_fail"></span></td>
+        <td><span id="boom_inner_na"></span></td>
+        <td><span id="boom_inner_remarks"></span></td>
+        <td><!-- Photo placeholder --></td>
+      </tr>
+      <tr>
+        <td>Outer Section</td>
+        <td>The largest, non-sliding part of the boom.</td>
+        <td><span id="boom_outer_pass"></span></td>
+        <td><span id="boom_outer_fail"></span></td>
+        <td><span id="boom_outer_na"></span></td>
+        <td><span id="boom_outer_remarks"></span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Wear Pads</td>
+        <td>Reduce friction &amp; protect boom sections.</td>
+        <td><span id="boom_wearpads_pass"></span></td>
+        <td><span id="boom_wearpads_fail"></span></td>
+        <td><span id="boom_wearpads_na"></span></td>
+        <td><span id="boom_wearpads_remarks"></span></td>
+        <td></td>
+      </tr>
+
+      <!-- Boom Cylinder -->
+      <tr class="sub-header">
+        <td colspan="7">Boom Cylinder</td>
+      </tr>
+      <tr>
+        <td>Piston Rod</td>
+        <td>Extends/retracts boom sections.</td>
+        <td><span id="piston_rod_pass"></span></td>
+        <td><span id="piston_rod_fail"></span></td>
+        <td><span id="piston_rod_na"></span></td>
+        <td><span id="piston_rod_remarks"></span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Cylinder Barrel</td>
+        <td>Houses the hydraulic fluid &amp; piston.</td>
+        <td><span id="cylinder_barrel_pass"></span></td>
+        <td><span id="cylinder_barrel_fail"></span></td>
+        <td><span id="cylinder_barrel_na"></span></td>
+        <td><span id="cylinder_barrel_remarks"></span></td>
+        <td></td>
+      </tr>
+
+      <!-- Boom Head -->
+      <tr class="sub-header">
+        <td colspan="7">Boom Head</td>
+      </tr>
+      <tr>
+        <td>Sheaves (Pulleys)</td>
+        <td>Grooved wheels guiding wire rope.</td>
+        <td><span id="boom_head_sheaves_pass"></span></td>
+        <td><span id="boom_head_sheaves_fail"></span></td>
+        <td><span id="boom_head_sheaves_na"></span></td>
+        <td><span id="boom_head_sheaves_remarks"></span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Boom Point Roller Bearings</td>
+        <td>Reduce friction at the boom tip.</td>
+        <td><span id="boom_point_roller_pass"></span></td>
+        <td><span id="boom_point_roller_fail"></span></td>
+        <td><span id="boom_point_roller_na"></span></td>
+        <td><span id="boom_point_roller_remarks"></span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Load Block Attachments</td>
+        <td>Connects load block or hook assembly.</td>
+        <td><span id="load_block_attachments_pass"></span></td>
+        <td><span id="load_block_attachments_fail"></span></td>
+        <td><span id="load_block_attachments_na"></span></td>
+        <td><span id="load_block_attachments_remarks"></span></td>
+        <td></td>
+      </tr>
+
+      <!-- Boom Base Section -->
+      <tr class="sub-header">
+        <td colspan="7">Boom Base Section</td>
+      </tr>
+      <tr>
+        <td>Mounting Pins</td>
+        <td>Connects the boom to the turntable.</td>
+        <td><span id="mounting_pins_pass"></span></td>
+        <td><span id="mounting_pins_fail"></span></td>
+        <td><span id="mounting_pins_na"></span></td>
+        <td><span id="mounting_pins_remarks"></span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Hydraulic Connections</td>
+        <td>Supplies fluid for extension/retraction.</td>
+        <td><span id="base_hydraulic_connections_pass"></span></td>
+        <td><span id="base_hydraulic_connections_fail"></span></td>
+        <td><span id="base_hydraulic_connections_na"></span></td>
+        <td><span id="base_hydraulic_connections_remarks"></span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Boom Stops</td>
+        <td>Prevent overextension/improper angle.</td>
+        <td><span id="boom_stops_pass"></span></td>
+        <td><span id="boom_stops_fail"></span></td>
+        <td><span id="boom_stops_na"></span></td>
+        <td><span id="boom_stops_remarks"></span></td>
+        <td></td>
+      </tr>
+
+      <!-- Extension Jibs -->
+      <tr class="sub-header">
+        <td colspan="7">Extension Jibs</td>
+      </tr>
+      <tr>
+        <td>Fixed Jibs</td>
+        <td>Permanently attached.</td>
+        <td><span id="fixed_jibs_pass"></span></td>
+        <td><span id="fixed_jibs_fail"></span></td>
+        <td><span id="fixed_jibs_na"></span></td>
+        <td><span id="fixed_jibs_remarks"></span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Luffing Jibs</td>
+        <td>Adjustable angle extensions.</td>
+        <td><span id="luffing_jibs_pass"></span></td>
+        <td><span id="luffing_jibs_fail"></span></td>
+        <td><span id="luffing_jibs_na"></span></td>
+        <td><span id="luffing_jibs_remarks"></span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Pin Connections</td>
+        <td>Fasteners to attach jibs to the boom.</td>
+        <td><span id="jib_pin_connections_pass"></span></td>
+        <td><span id="jib_pin_connections_fail"></span></td>
+        <td><span id="jib_pin_connections_na"></span></td>
+        <td><span id="jib_pin_connections_remarks"></span></td>
+        <td></td>
+      </tr>
+
+      <!-- Sheaves (General) -->
+      <tr class="sub-header">
+        <td colspan="7">Sheaves</td>
+      </tr>
+      <tr>
+        <td>Groove Lining</td>
+        <td>Prevents wire rope wear.</td>
+        <td><span id="groove_lining_pass"></span></td>
+        <td><span id="groove_lining_fail"></span></td>
+        <td><span id="groove_lining_na"></span></td>
+        <td><span id="groove_lining_remarks"></span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Sheave Bearings</td>
+        <td>Allow smooth rotation.</td>
+        <td><span id="sheave_bearings_pass"></span></td>
+        <td><span id="sheave_bearings_fail"></span></td>
+        <td><span id="sheave_bearings_na"></span></td>
+        <td><span id="sheave_bearings_remarks"></span></td>
+        <td></td>
+      </tr>
+
+      <!-- =======================
+           SUPERSTRUCTURE
+      ======================= -->
+      <tr class="section-header">
+        <td colspan="7">Superstructure</td>
+      </tr>
+
+      <!-- Turntable -->
+      <tr class="sub-header">
+        <td colspan="7">Turntable</td>
+      </tr>
+      <tr>
+        <td>Rotex Bearing</td>
+        <td>Supports rotation between carrier &amp; superstructure.</td>
+        <td><span id="rotex_bearing_pass"></span></td>
+        <td><span id="rotex_bearing_fail"></span></td>
+        <td><span id="rotex_bearing_na"></span></td>
+        <td><span id="rotex_bearing_remarks"></span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Drive Motors</td>
+        <td>Powers the rotation mechanism.</td>
+        <td><span id="turntable_drive_motors_pass"></span></td>
+        <td><span id="turntable_drive_motors_fail"></span></td>
+        <td><span id="turntable_drive_motors_na"></span></td>
+        <td><span id="turntable_drive_motors_remarks"></span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Lubrication Channels</td>
+        <td>Ensure smooth, long-lasting operation.</td>
+        <td><span id="turntable_lubrication_pass"></span></td>
+        <td><span id="turntable_lubrication_fail"></span></td>
+        <td><span id="turntable_lubrication_na"></span></td>
+        <td><span id="turntable_lubrication_remarks"></span></td>
+        <td></td>
+      </tr>
+
+      <!-- Operator’s Cab -->
+      <tr class="sub-header">
+        <td colspan="7">Operator’s Cab</td>
+      </tr>
+      <tr>
+        <td>Control Levers</td>
+        <td>Operate boom, winch, &amp; rotation.</td>
+        <td><span id="control_levers_pass"></span></td>
+        <td><span id="control_levers_fail"></span></td>
+        <td><span id="control_levers_na"></span></td>
+        <td><span id="control_levers_remarks"></span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Digital Display Panels</td>
+        <td>Show load data &amp; boom angles.</td>
+        <td><span id="display_panels_pass"></span></td>
+        <td><span id="display_panels_fail"></span></td>
+        <td><span id="display_panels_na"></span></td>
+        <td><span id="display_panels_remarks"></span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Cab Windows</td>
+        <td>Reinforced glass for safety &amp; visibility.</td>
+        <td><span id="cab_windows_pass"></span></td>
+        <td><span id="cab_windows_fail"></span></td>
+        <td><span id="cab_windows_na"></span></td>
+        <td><span id="cab_windows_remarks"></span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Climate Controls</td>
+        <td>Heating &amp; cooling for operator comfort.</td>
+        <td><span id="climate_controls_pass"></span></td>
+        <td><span id="climate_controls_fail"></span></td>
+        <td><span id="climate_controls_na"></span></td>
+        <td><span id="climate_controls_remarks"></span></td>
+        <td></td>
+      </tr>
+
+      <!-- Counterweights -->
+      <tr class="sub-header">
+        <td colspan="7">Counterweights</td>
+      </tr>
+      <tr>
+        <td>Stackable Weights</td>
+        <td>Modular sections for varying lifting conditions.</td>
+        <td><span id="stackable_weights_pass"></span></td>
+        <td><span id="stackable_weights_fail"></span></td>
+        <td><span id="stackable_weights_na"></span></td>
+        <td><span id="stackable_weights_remarks"></span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Attachment Mechanism</td>
+        <td>Pins or hydraulics for securing weights.</td>
+        <td><span id="counterweight_attachment_pass"></span></td>
+        <td><span id="counterweight_attachment_fail"></span></td>
+        <td><span id="counterweight_attachment_na"></span></td>
+        <td><span id="counterweight_attachment_remarks"></span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Lifting Eyes</td>
+        <td>For transporting weights.</td>
+        <td><span id="lifting_eyes_pass"></span></td>
+        <td><span id="lifting_eyes_fail"></span></td>
+        <td><span id="lifting_eyes_na"></span></td>
+        <td><span id="lifting_eyes_remarks"></span></td>
+        <td></td>
+      </tr>
+
+      <!-- Swing Mechanism -->
+      <tr class="sub-header">
+        <td colspan="7">Swing Mechanism</td>
+      </tr>
+      <tr>
+        <td>Swing Gear</td>
+        <td>Rotates the superstructure.</td>
+        <td><span id="swing_gear_pass"></span></td>
+        <td><span id="swing_gear_fail"></span></td>
+        <td><span id="swing_gear_na"></span></td>
+        <td><span id="swing_gear_remarks"></span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Hydraulic Swing Motor</td>
+        <td>Drives the gear mechanism.</td>
+        <td><span id="swing_motor_pass"></span></td>
+        <td><span id="swing_motor_fail"></span></td>
+        <td><span id="swing_motor_na"></span></td>
+        <td><span id="swing_motor_remarks"></span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Swing Brake</td>
+        <td>Locks the crane’s rotation in place.</td>
+        <td><span id="swing_brake_pass"></span></td>
+        <td><span id="swing_brake_fail"></span></td>
+        <td><span id="swing_brake_na"></span></td>
+        <td><span id="swing_brake_remarks"></span></td>
+        <td></td>
+      </tr>
+
+      <!-- Winch Systems -->
+      <tr class="sub-header">
+        <td colspan="7">Winch Systems</td>
+      </tr>
+      <tr>
+        <td>Main Winch (Drum)</td>
+        <td>Cylindrical reel for wire rope.</td>
+        <td><span id="main_winch_drum_pass"></span></td>
+        <td><span id="main_winch_drum_fail"></span></td>
+        <td><span id="main_winch_drum_na"></span></td>
+        <td><span id="main_winch_drum_remarks"></span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Main Winch (Brake System)</td>
+        <td>Controls wire rope tension.</td>
+        <td><span id="main_winch_brake_pass"></span></td>
+        <td><span id="main_winch_brake_fail"></span></td>
+        <td><span id="main_winch_brake_na"></span></td>
+        <td><span id="main_winch_brake_remarks"></span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Main Winch (Hydraulic Motor)</td>
+        <td>Powers winch rotation.</td>
+        <td><span id="main_winch_motor_pass"></span></td>
+        <td><span id="main_winch_motor_fail"></span></td>
+        <td><span id="main_winch_motor_na"></span></td>
+        <td><span id="main_winch_motor_remarks"></span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Auxiliary Winch (Smaller Drum)</td>
+        <td>For secondary wire rope.</td>
+        <td><span id="aux_winch_drum_pass"></span></td>
+        <td><span id="aux_winch_drum_fail"></span></td>
+        <td><span id="aux_winch_drum_na"></span></td>
+        <td><span id="aux_winch_drum_remarks"></span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Auxiliary Winch (Dedicated Motor)</td>
+        <td>Operates independent of main winch.</td>
+        <td><span id="aux_winch_motor_pass"></span></td>
+        <td><span id="aux_winch_motor_fail"></span></td>
+        <td><span id="aux_winch_motor_na"></span></td>
+        <td><span id="aux_winch_motor_remarks"></span></td>
+        <td></td>
+      </tr>
+
+      <!-- Hydraulic Pumps -->
+      <tr class="sub-header">
+        <td colspan="7">Hydraulic Pumps</td>
+      </tr>
+      <tr>
+        <td>Gear Pump</td>
+        <td>Supplies fluid for smaller operations.</td>
+        <td><span id="gear_pump_pass"></span></td>
+        <td><span id="gear_pump_fail"></span></td>
+        <td><span id="gear_pump_na"></span></td>
+        <td><span id="gear_pump_remarks"></span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Piston Pump</td>
+        <td>Handles higher pressure.</td>
+        <td><span id="piston_pump_pass"></span></td>
+        <td><span id="piston_pump_fail"></span></td>
+        <td><span id="piston_pump_na"></span></td>
+        <td><span id="piston_pump_remarks"></span></td>
+        <td></td>
+      </tr>
+
+      <!-- =======================
+           CARRIER (CHASSIS)
+      ======================= -->
+      <tr class="section-header">
+        <td colspan="7">Carrier (Chassis)</td>
+      </tr>
+
+      <!-- Truck Chassis -->
+      <tr class="sub-header">
+        <td colspan="7">Truck Chassis</td>
+      </tr>
+      <tr>
+        <td>Frame Rails</td>
+        <td>Reinforced structure supporting the crane.</td>
+        <td><span id="frame_rails_pass"></span></td>
+        <td><span id="frame_rails_fail"></span></td>
+        <td><span id="frame_rails_na"></span></td>
+        <td><span id="frame_rails_remarks"></span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Axles</td>
+        <td>Distribute weight &amp; support wheels.</td>
+        <td><span id="axles_pass"></span></td>
+        <td><span id="axles_fail"></span></td>
+        <td><span id="axles_na"></span></td>
+        <td><span id="axles_remarks"></span></td>
+        <td></td>
+      </tr>
+
+      <!-- Outriggers -->
+      <tr class="sub-header">
+        <td colspan="7">Outriggers</td>
+      </tr>
+      <tr>
+        <td>Telescopic Arms</td>
+        <td>Extendable arms for stability.</td>
+        <td><span id="outriggers_telescopic_pass"></span></td>
+        <td><span id="outriggers_telescopic_fail"></span></td>
+        <td><span id="outriggers_telescopic_na"></span></td>
+        <td><span id="outriggers_telescopic_remarks"></span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Foot Pads</td>
+        <td>Distribute weight on ground.</td>
+        <td><span id="outriggers_footpads_pass"></span></td>
+        <td><span id="outriggers_footpads_fail"></span></td>
+        <td><span id="outriggers_footpads_na"></span></td>
+        <td><span id="outriggers_footpads_remarks"></span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Hydraulic Cylinders</td>
+        <td>Operate extension/retraction.</td>
+        <td><span id="outriggers_cylinders_pass"></span></td>
+        <td><span id="outriggers_cylinders_fail"></span></td>
+        <td><span id="outriggers_cylinders_na"></span></td>
+        <td><span id="outriggers_cylinders_remarks"></span></td>
+        <td></td>
+      </tr>
+
+      <!-- =======================
+           LOAD HANDLING EQUIPMENT
+      ======================= -->
+      <tr class="section-header">
+        <td colspan="7">Load Handling Equipment</td>
+      </tr>
+
+      <!-- Load Hook -->
+      <tr class="sub-header">
+        <td colspan="7">Load Hook</td>
+      </tr>
+      <tr>
+        <td>Safety Latch</td>
+        <td>Prevents load slipping.</td>
+        <td><span id="hook_safety_latch_pass"></span></td>
+        <td><span id="hook_safety_latch_fail"></span></td>
+        <td><span id="hook_safety_latch_na"></span></td>
+        <td><span id="hook_safety_latch_remarks"></span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Swivel Mechanism</td>
+        <td>Allows rotation under load.</td>
+        <td><span id="hook_swivel_mech_pass"></span></td>
+        <td><span id="hook_swivel_mech_fail"></span></td>
+        <td><span id="hook_swivel_mech_na"></span></td>
+        <td><span id="hook_swivel_mech_remarks"></span></td>
+        <td></td>
+      </tr>
+
+      <!-- Load Line (Wire Rope) -->
+      <tr class="sub-header">
+        <td colspan="7">Load Line (Wire Rope)</td>
+      </tr>
+      <tr>
+        <td>Steel Core</td>
+        <td>Provides strength/flexibility.</td>
+        <td><span id="wire_rope_core_pass"></span></td>
+        <td><span id="wire_rope_core_fail"></span></td>
+        <td><span id="wire_rope_core_na"></span></td>
+        <td><span id="wire_rope_core_remarks"></span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Outer Strands</td>
+        <td>Protect the core, enhance durability.</td>
+        <td><span id="wire_rope_strands_pass"></span></td>
+        <td><span id="wire_rope_strands_fail"></span></td>
+        <td><span id="wire_rope_strands_na"></span></td>
+        <td><span id="wire_rope_strands_remarks"></span></td>
+        <td></td>
+      </tr>
+
+      <!-- Overhaul Ball -->
+      <tr class="sub-header">
+        <td colspan="7">Overhaul Ball</td>
+      </tr>
+      <tr>
+        <td>Ball Weight</td>
+        <td>Keeps wire rope taut.</td>
+        <td><span id="overhaul_ball_weight_pass"></span></td>
+        <td><span id="overhaul_ball_weight_fail"></span></td>
+        <td><span id="overhaul_ball_weight_na"></span></td>
+        <td><span id="overhaul_ball_weight_remarks"></span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Swivel Assembly</td>
+        <td>Prevents rope twisting.</td>
+        <td><span id="overhaul_ball_swivel_pass"></span></td>
+        <td><span id="overhaul_ball_swivel_fail"></span></td>
+        <td><span id="overhaul_ball_swivel_na"></span></td>
+        <td><span id="overhaul_ball_swivel_remarks"></span></td>
+        <td></td>
+      </tr>
+
+      <!-- Rigging Hardware -->
+      <tr class="sub-header">
+        <td colspan="7">Rigging Hardware</td>
+      </tr>
+      <tr>
+        <td>Shackles</td>
+        <td>U-shaped fasteners for loads.</td>
+        <td><span id="shackles_pass"></span></td>
+        <td><span id="shackles_fail"></span></td>
+        <td><span id="shackles_na"></span></td>
+        <td><span id="shackles_remarks"></span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Slings</td>
+        <td>Nylon/wire rope/chain for loads.</td>
+        <td><span id="slings_pass"></span></td>
+        <td><span id="slings_fail"></span></td>
+        <td><span id="slings_na"></span></td>
+        <td><span id="slings_remarks"></span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Spreader Bars</td>
+        <td>Distribute load weight.</td>
+        <td><span id="spreader_bars_pass"></span></td>
+        <td><span id="spreader_bars_fail"></span></td>
+        <td><span id="spreader_bars_na"></span></td>
+        <td><span id="spreader_bars_remarks"></span></td>
+        <td></td>
+      </tr>
+
+      <!-- =======================
+           HYDRAULIC SYSTEMS
+      ======================= -->
+      <tr class="section-header">
+        <td colspan="7">Hydraulic Systems</td>
+      </tr>
+
+      <!-- Hydraulic Cylinders -->
+      <tr class="sub-header">
+        <td colspan="7">Hydraulic Cylinders</td>
+      </tr>
+      <tr>
+        <td>Seals and Gaskets</td>
+        <td>Prevent leaks.</td>
+        <td><span id="hyd_cyl_seals_pass"></span></td>
+        <td><span id="hyd_cyl_seals_fail"></span></td>
+        <td><span id="hyd_cyl_seals_na"></span></td>
+        <td><span id="hyd_cyl_seals_remarks"></span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Cylinder Rod Ends</td>
+        <td>Connect to other components.</td>
+        <td><span id="cyl_rod_ends_pass"></span></td>
+        <td><span id="cyl_rod_ends_fail"></span></td>
+        <td><span id="cyl_rod_ends_na"></span></td>
+        <td><span id="cyl_rod_ends_remarks"></span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Hydraulic Fluid Ports</td>
+        <td>Entry/exit points for fluid.</td>
+        <td><span id="cyl_fluid_ports_pass"></span></td>
+        <td><span id="cyl_fluid_ports_fail"></span></td>
+        <td><span id="cyl_fluid_ports_na"></span></td>
+        <td><span id="cyl_fluid_ports_remarks"></span></td>
+        <td></td>
+      </tr>
+
+      <!-- Hydraulic Reservoir -->
+      <tr class="sub-header">
+        <td colspan="7">Hydraulic Reservoir</td>
+      </tr>
+      <tr>
+        <td>Tank Filters</td>
+        <td>Clean the hydraulic fluid.</td>
+        <td><span id="tank_filters_pass"></span></td>
+        <td><span id="tank_filters_fail"></span></td>
+        <td><span id="tank_filters_na"></span></td>
+        <td><span id="tank_filters_remarks"></span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Sight Gauge</td>
+        <td>Displays fluid levels.</td>
+        <td><span id="sight_gauge_pass"></span></td>
+        <td><span id="sight_gauge_fail"></span></td>
+        <td><span id="sight_gauge_na"></span></td>
+        <td><span id="sight_gauge_remarks"></span></td>
+        <td></td>
+      </tr>
+
+      <!-- Hydraulic Lines -->
+      <tr class="sub-header">
+        <td colspan="7">Hydraulic Lines</td>
+      </tr>
+      <tr>
+        <td>High-Pressure Hoses</td>
+        <td>Transport fluid to cylinders.</td>
+        <td><span id="hyd_lines_hoses_pass"></span></td>
+        <td><span id="hyd_lines_hoses_fail"></span></td>
+        <td><span id="hyd_lines_hoses_na"></span></td>
+        <td><span id="hyd_lines_hoses_remarks"></span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Fittings and Couplings</td>
+        <td>Secure connections.</td>
+        <td><span id="hyd_lines_fittings_pass"></span></td>
+        <td><span id="hyd_lines_fittings_fail"></span></td>
+        <td><span id="hyd_lines_fittings_na"></span></td>
+        <td><span id="hyd_lines_fittings_remarks"></span></td>
+        <td></td>
+      </tr>
+
+      <!-- =======================
+           SAFETY & MONITORING SYSTEMS
+      ======================= -->
+      <tr class="section-header">
+        <td colspan="7">Safety and Monitoring Systems</td>
+      </tr>
+
+      <!-- Load Moment Indicator (LMI) -->
+      <tr class="sub-header">
+        <td colspan="7">Load Moment Indicator (LMI)</td>
+      </tr>
+      <tr>
+        <td>Sensors</td>
+        <td>Measure load &amp; boom angle.</td>
+        <td><span id="lmi_sensors_pass"></span></td>
+        <td><span id="lmi_sensors_fail"></span></td>
+        <td><span id="lmi_sensors_na"></span></td>
+        <td><span id="lmi_sensors_remarks"></span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Display Unit</td>
+        <td>Shows safety alerts &amp; status.</td>
+        <td><span id="lmi_display_pass"></span></td>
+        <td><span id="lmi_display_fail"></span></td>
+        <td><span id="lmi_display_na"></span></td>
+        <td><span id="lmi_display_remarks"></span></td>
+        <td></td>
+      </tr>
+
+      <!-- Anti-Two-Block Device -->
+      <tr class="sub-header">
+        <td colspan="7">Anti-Two-Block Device</td>
+      </tr>
+      <tr>
+        <td>Proximity Switch</td>
+        <td>Detects block nearing the boom head.</td>
+        <td><span id="anti_twoblock_switch_pass"></span></td>
+        <td><span id="anti_twoblock_switch_fail"></span></td>
+        <td><span id="anti_twoblock_switch_na"></span></td>
+        <td><span id="anti_twoblock_switch_remarks"></span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Alarm System</td>
+        <td>Notifies operator to prevent collision.</td>
+        <td><span id="anti_twoblock_alarm_pass"></span></td>
+        <td><span id="anti_twoblock_alarm_fail"></span></td>
+        <td><span id="anti_twoblock_alarm_na"></span></td>
+        <td><span id="anti_twoblock_alarm_remarks"></span></td>
+        <td></td>
+      </tr>
+
+      <!-- Outrigger Pressure Sensors -->
+      <tr class="sub-header">
+        <td colspan="7">Outrigger Pressure Sensors</td>
+      </tr>
+      <tr>
+        <td>Load Cells</td>
+        <td>Measure force on each outrigger.</td>
+        <td><span id="outrigger_load_cells_pass"></span></td>
+        <td><span id="outrigger_load_cells_fail"></span></td>
+        <td><span id="outrigger_load_cells_na"></span></td>
+        <td><span id="outrigger_load_cells_remarks"></span></td>
+        <td></td>
+      </tr>
+
+      <!-- Crane Level Indicator -->
+      <tr class="sub-header">
+        <td colspan="7">Crane Level Indicator</td>
+      </tr>
+      <tr>
+        <td>Bubble Level</td>
+        <td>Simple leveling tool.</td>
+        <td><span id="crane_bubble_level_pass"></span></td>
+        <td><span id="crane_bubble_level_fail"></span></td>
+        <td><span id="crane_bubble_level_na"></span></td>
+        <td><span id="crane_bubble_level_remarks"></span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Digital Level</td>
+        <td>More precise readings.</td>
+        <td><span id="crane_digital_level_pass"></span></td>
+        <td><span id="crane_digital_level_fail"></span></td>
+        <td><span id="crane_digital_level_na"></span></td>
+        <td><span id="crane_digital_level_remarks"></span></td>
+        <td></td>
+      </tr>
+
+      <!-- Radius Indicator -->
+      <tr class="sub-header">
+        <td colspan="7">Radius Indicator</td>
+      </tr>
+      <tr>
+        <td>Mechanical Arm/Sensor</td>
+        <td>Measures distance from load to center.</td>
+        <td><span id="radius_indicator_pass"></span></td>
+        <td><span id="radius_indicator_fail"></span></td>
+        <td><span id="radius_indicator_na"></span></td>
+        <td><span id="radius_indicator_remarks"></span></td>
+        <td></td>
+      </tr>
+
+      <!-- =======================
+           ADDITIONAL ATTACHMENTS
+      ======================= -->
+      <tr class="section-header">
+        <td colspan="7">Additional Attachments</td>
+      </tr>
+
+      <!-- Fly Jib -->
+      <tr class="sub-header">
+        <td colspan="7">Fly Jib</td>
+      </tr>
+      <tr>
+        <td>Pivoting Mount</td>
+        <td>Attaches jib to main boom.</td>
+        <td><span id="fly_jib_pivot_pass"></span></td>
+        <td><span id="fly_jib_pivot_fail"></span></td>
+        <td><span id="fly_jib_pivot_na"></span></td>
+        <td><span id="fly_jib_pivot_remarks"></span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Extension Pins</td>
+        <td>Lock the jib in position.</td>
+        <td><span id="fly_jib_extension_pins_pass"></span></td>
+        <td><span id="fly_jib_extension_pins_fail"></span></td>
+        <td><span id="fly_jib_extension_pins_na"></span></td>
+        <td><span id="fly_jib_extension_pins_remarks"></span></td>
+        <td></td>
+      </tr>
+
+      <!-- Lattice Extensions -->
+      <tr class="sub-header">
+        <td colspan="7">Lattice Extensions</td>
+      </tr>
+      <tr>
+        <td>Cross Bracing</td>
+        <td>Provides structural integrity.</td>
+        <td><span id="lattice_bracing_pass"></span></td>
+        <td><span id="lattice_bracing_fail"></span></td>
+        <td><span id="lattice_bracing_na"></span></td>
+        <td><span id="lattice_bracing_remarks"></span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Bolt or Pin Connectors</td>
+        <td>Secure to the boom.</td>
+        <td><span id="lattice_connectors_pass"></span></td>
+        <td><span id="lattice_connectors_fail"></span></td>
+        <td><span id="lattice_connectors_na"></span></td>
+        <td><span id="lattice_connectors_remarks"></span></td>
+        <td></td>
+      </tr>
+
+      <!-- Man Basket -->
+      <tr class="sub-header">
+        <td colspan="7">Man Basket</td>
+      </tr>
+      <tr>
+        <td>Fall Protection</td>
+        <td>Safety harness points.</td>
+        <td><span id="man_basket_fall_protection_pass"></span></td>
+        <td><span id="man_basket_fall_protection_fail"></span></td>
+        <td><span id="man_basket_fall_protection_na"></span></td>
+        <td><span id="man_basket_fall_protection_remarks"></span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Railings</td>
+        <td>Prevents falls from the basket.</td>
+        <td><span id="man_basket_railings_pass"></span></td>
+        <td><span id="man_basket_railings_fail"></span></td>
+        <td><span id="man_basket_railings_na"></span></td>
+        <td><span id="man_basket_railings_remarks"></span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Signature & Emails -->
+  <div class="signature-section">
+    <strong>Signature:</strong> <span id="signature"></span><br>
+    <strong>Email #1:</strong> <span id="email1"></span><br>
+    <strong>Email #2:</strong> <span id="email2"></span><br>
+  </div>
+
+  <!-- Print + Save Buttons -->
+  <div class="print-btn-container">
+    <button id="printBtn">Print / Save as PDF</button>
+    <button id="saveLocalBtn">Save Inspection (.json)</button>
+  </div>
+</div>
+
+<!-- NEW: Deficiencies/Hazards Page -->
+<section id="deficienciesPage">
+  <h2>Deficiencies / Hazards</h2>
+  <p>Below are photos taken during the inspection (if any):</p>
+  <div id="photosContainer"></div>
+</section>
+
+<script src="telescopingreport.js"></script>
+</body>
+</html>
