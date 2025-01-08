@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Final Report - Boom Truck Crane</title>
+  <link rel="stylesheet" href="boomtruckcranereport.css">
+</head>
+<body>
+
+<div class="report-container">
+  <h1>Boom Truck Crane Inspection - Final Report</h1>
+
+  <!-- Basic Info -->
+  <section class="basic-info">
+    <div><strong>Owner:</strong> <span id="owner"></span></div>
+    <div><strong>Date:</strong> <span id="inspectionDate"></span></div>
+    <div><strong>Location:</strong> <span id="location"></span></div>
+    <div><strong>Service Status:</strong> <span id="serviceStatus"></span></div>
+    <div><strong>Make:</strong> <span id="make"></span></div>
+    <div><strong>Model:</strong> <span id="model"></span></div>
+    <div><strong>Serial #:</strong> <span id="serialNumber"></span></div>
+    <div><strong>Unit ID:</strong> <span id="unitId"></span></div>
+    <div><strong>Max Capacity:</strong> <span id="maxCapacity"></span></div>
+    <div><strong>Inspector:</strong> <span id="inspectorName"></span></div>
+  </section>
+
+  <hr>
+
+  <!-- Two-column container -->
+  <div class="two-column-sections">
+
+    <!-- Example Section: Boom Assembly -->
+    <div class="inspection-section">
+      <h2>Boom Assembly (Boom Truck Crane)</h2>
+      <!-- Each sub-section is a small table -->
+      <h3>Telescoping Boom Sections</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>System/Part</th>
+            <th>Pass</th>
+            <th>Fail</th>
+            <th>N/A</th>
+            <th>Remarks</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Inner Sections</td>
+            <td><span id="boom_inner_pass"></span></td>
+            <td><span id="boom_inner_fail"></span></td>
+            <td><span id="boom_inner_na"></span></td>
+            <td><span id="boom_inner_remarks"></span></td>
+          </tr>
+          <tr>
+            <td>Outer Section</td>
+            <td><span id="boom_outer_pass"></span></td>
+            <td><span id="boom_outer_fail"></span></td>
+            <td><span id="boom_outer_na"></span></td>
+            <td><span id="boom_outer_remarks"></span></td>
+          </tr>
+          <tr>
+            <td>Wear Pads</td>
+            <td><span id="boom_wearpads_pass"></span></td>
+            <td><span id="boom_wearpads_fail"></span></td>
+            <td><span id="boom_wearpads_na"></span></td>
+            <td><span id="boom_wearpads_remarks"></span></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- Boom Cylinder -->
+      <h3>Boom Cylinder</h3>
+      <table>
+        <!-- Similar pattern... -->
+      </table>
+
+      <!-- ...Continue with Boom Head, Boom Base, etc... -->
+    </div>
+
+    <!-- Another Section: Superstructure, etc. -->
+    <div class="inspection-section">
+      <h2>Superstructure</h2>
+      <h3>Turntable</h3>
+      <table>
+        <!-- Rotex Bearing row, etc. -->
+      </table>
+      <h3>Operator’s Cab</h3>
+      <table>
+        <!-- Control Levers, Display Panels, etc. -->
+      </table>
+      <h3>Counterweights</h3>
+      <table>
+        <!-- Stackable Weights, etc. -->
+      </table>
+    </div>
+
+    <!-- Continue creating .inspection-section blocks for Carrier, Load Handling Equipment, Hydraulic Systems, Safety & Monitoring, etc. -->
+
+  </div> <!-- End two-column-sections -->
+
+  <!-- Signature & Emails -->
+  <div class="signature-section">
+    <strong>Signature:</strong> <span id="signature"></span><br>
+    <strong>Email #1:</strong> <span id="email1"></span><br>
+    <strong>Email #2:</strong> <span id="email2"></span><br>
+  </div>
+
+  <!-- Print Button -->
+  <div class="print-btn-container">
+    <button id="printBtn">Print / Save</button>
+  </div>
+</div>
+
+<script src="scriptboomtruckreport.js"> </script>
+</body>
+</html>

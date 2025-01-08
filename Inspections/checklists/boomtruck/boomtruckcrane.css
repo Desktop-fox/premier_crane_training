@@ -1,0 +1,95 @@
+/* boomtruckcrane.css */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background: #f5f5f5;
+    padding: 20px;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: #fff;
+    border: 1px solid #ccc;
+    padding: 20px;
+  }
+  
+  h1 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  /* Info fields */
+  .inspection-info {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  .inspection-info label {
+    font-weight: bold;
+    margin-bottom: 4px;
+  }
+  .inspection-info input {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+  
+  /* Table styling */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+  }
+  thead th {
+    background-color: #f2f2f2;
+    text-align: left;
+    padding: 8px;
+  }
+  th, td {
+    border: 1px solid #ccc;
+    padding: 8px;
+  }
+  .section-header td {
+    background-color: #0077b6;
+    color: #fff;
+    font-weight: bold;
+  }
+  .sub-header td {
+    background-color: #00b4d8;
+    color: #fff;
+    font-weight: bold;
+  }
+  
+  /* Signature */
+  .signature-section {
+    margin-top: 10px;
+  }
+  .signature-section label {
+    font-weight: bold;
+    margin-right: 10px;
+  }
+  
+  /* Submit */
+  .submit-section {
+    text-align: center;
+    margin-top: 20px;
+  }
+  button[type="submit"] {
+    background: #0077b6;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  button[type="submit"]:hover {
+    background: #005f8a;
+  }
+  

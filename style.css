@@ -1,0 +1,44 @@
+/* Reset default browser styles (optional) */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body style */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+}
+
+/* Container to center items both vertically & horizontally */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full viewport height */
+}
+
+/* Link styling for each icon box */
+.icon-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px;
+  text-decoration: none;   /* remove underline */
+  color: #333;            /* default text color */
+}
+
+/* Icon images */
+.icon-link img {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 10px;
+  border-radius: 8px;     /* optional styling */
+}
+
+/* Icon label */
+.icon-link span {
+  font-size: 1rem;
+  margin-top: 5px;
+}
