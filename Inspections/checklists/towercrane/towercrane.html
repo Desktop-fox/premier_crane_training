@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Tower Crane Inspection Report</title>
+  <!-- Link to external CSS -->
+  <link rel="stylesheet" href="towercrane.css">
+</head>
+<body>
+
+<div class="container">
+  <h1>Tower Crane Inspection (Annual)</h1>
+  
+  <!-- Top form for company & crane info -->
+  <div class="inspection-info">
+    <div>
+      <label for="owner">Owner:</label>
+      <input type="text" id="owner" name="owner" placeholder="Owner Name">
+    </div>
+    <div>
+      <label for="inspectionDate">Date:</label>
+      <input type="date" id="inspectionDate" name="inspectionDate">
+    </div>
+    <div>
+      <label for="location">Location:</label>
+      <input type="text" id="location" name="location" placeholder="Job Site or Address">
+    </div>
+    <div>
+      <label for="serviceStatus">Service Status:</label>
+      <input type="text" id="serviceStatus" name="serviceStatus" placeholder="In Service / Out of Service">
+    </div>
+    <div>
+      <label for="make">Make:</label>
+      <input type="text" id="make" name="make" placeholder="Manufacturer">
+    </div>
+    <div>
+      <label for="model">Model:</label>
+      <input type="text" id="model" name="model" placeholder="Crane Model">
+    </div>
+    <div>
+      <label for="serialNumber">Serial Number:</label>
+      <input type="text" id="serialNumber" name="serialNumber" placeholder="Serial #">
+    </div>
+    <div>
+      <label for="unitId">Unit ID:</label>
+      <input type="text" id="unitId" name="unitId" placeholder="CR-001, etc.">
+    </div>
+    <div>
+      <label for="maxCapacity">Max. Capacity:</label>
+      <input type="text" id="maxCapacity" name="maxCapacity" placeholder="e.g., 20 Tons">
+    </div>
+    <div>
+      <label for="inspectorName">Inspector:</label>
+      <input type="text" id="inspectorName" name="inspectorName" placeholder="John Doe">
+    </div>
+  </div>
+
+  <!-- Inspection form -->
+  <form id="inspectionForm">
+    <table>
+      <thead>
+        <tr>
+          <th>System/Part</th>
+          <th>Item / Description</th>
+          <th>Pass</th>
+          <th>Fail</th>
+          <th>N/A</th>
+          <th>Remarks</th>
+          <th>Photo</th>
+        </tr>
+      </thead>
+      <tbody>
+
+        <!-- =======================
+             BASE & FOUNDATION
+        ======================= -->
+        <tr class="section-header">
+          <td colspan="7">Base and Foundation</td>
+        </tr>
+        <!-- Foundation -->
+        <tr>
+          <td>Foundation</td>
+          <td>Inspect for cracks, settlement, or disintegration. Verify secure anchorage and ensure the base complies with manufacturer specs. (OSHA 1926.1402) & (ASME 5-2.1.1)</td>
+          <td><input type="checkbox" name="foundation_pass"></td>
+          <td><input type="checkbox" name="foundation_fail"></td>
+          <td><input type="checkbox" name="foundation_na"></td>
+          <td><input type="text" name="foundation_remarks" placeholder="Notes"></td>
+          <td>
+            <div class="photo-buttons">
+              <div>
+                <input id="foundationFileCamera" type="file" accept="image/*" capture="camera" style="display:none;">
+                <button class="camera-button" type="button" onclick="openCamera('foundationFileCamera')">📷</button>
+              </div>
+              <div>
+                <input id="foundationFileUpload" type="file" accept="image/*" style="display:none;">
+                <button class="upload-button" type="button" onclick="openUpload('foundationFileUpload')">Upload</button>
+              </div>
+              <div class="image-loaded">
+                <input type="checkbox" id="foundationFileCamera_check" disabled>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <!-- Levelness -->
+        <tr>
+          <td>Levelness</td>
+          <td>Ensure the base is level to prevent misalignment. (OSHA 1926.1402(a)) & (ASME 5-2.1.1)</td>
+          <td><input type="checkbox" name="levelness_pass"></td>
+          <td><input type="checkbox" name="levelness_fail"></td>
+          <td><input type="checkbox" name="levelness_na"></td>
+          <td><input type="text" name="levelness_remarks" placeholder="Notes"></td>
+          <td>
+            <div class="photo-buttons">
+              <div>
+                <input id="levelnessFileCamera" type="file" accept="image/*" capture="camera" style="display:none;">
+                <button class="camera-button" type="button" onclick="openCamera('levelnessFileCamera')">📷</button>
+              </div>
+              <div>
+                <input id="levelnessFileUpload" type="file" accept="image/*" style="display:none;">
+                <button class="upload-button" type="button" onclick="openUpload('levelnessFileUpload')">Upload</button>
+              </div>
+              <div class="image-loaded">
+                <input type="checkbox" id="levelnessFileCamera_check" disabled>
+              </div>
+            </div>
+          </td>
+        </tr>
+
+        <!-- =======================
+             TOWER STRUCTURE
+        ======================= -->
+        <tr class="section-header">
+          <td colspan="7">Tower Structure</td>
+        </tr>
+        <!-- Mast Sections -->
+        <tr class="sub-header">
+          <td colspan="7">Mast Sections</td>
+        </tr>
+        <tr>
+          <td>Mast Sections</td>
+          <td>Inspect for deformation, cracks, corrosion, or loose bolts. Verify proper alignment & secure connections. (OSHA 1926.1412(d)(1)(i)) & (ASME 5-2.1.3)</td>
+          <td><input type="checkbox" name="mast_sections_pass"></td>
+          <td><input type="checkbox" name="mast_sections_fail"></td>
+          <td><input type="checkbox" name="mast_sections_na"></td>
+          <td><input type="text" name="mast_sections_remarks" placeholder="Notes"></td>
+          <td>
+            <div class="photo-buttons">
+              <div>
+                <input id="mastSectionsFileCamera" type="file" accept="image/*" capture="camera" style="display:none;">
+                <button class="camera-button" type="button" onclick="openCamera('mastSectionsFileCamera')">📷</button>
+              </div>
+              <div>
+                <input id="mastSectionsFileUpload" type="file" accept="image/*" style="display:none;">
+                <button class="upload-button" type="button" onclick="openUpload('mastSectionsFileUpload')">Upload</button>
+              </div>
+              <div class="image-loaded">
+                <input type="checkbox" id="mastSectionsFileCamera_check" disabled>
+              </div>
+            </div>
+          </td>
+        </tr>
+
+        <!-- Climbing Frames -->
+        <tr class="sub-header">
+          <td colspan="7">Climbing Frames</td>
+        </tr>
+        <tr>
+          <td>Climbing Frames</td>
+          <td>Ensure proper functioning and structural integrity of climbing frames. Inspect locking mechanisms for wear or damage. (OSHA 1926.1412(c)) & (ASME 5-2.1.3(c))</td>
+          <td><input type="checkbox" name="climbing_frames_pass"></td>
+          <td><input type="checkbox" name="climbing_frames_fail"></td>
+          <td><input type="checkbox" name="climbing_frames_na"></td>
+          <td><input type="text" name="climbing_frames_remarks" placeholder="Notes"></td>
+          <td>
+            <div class="photo-buttons">
+              <div>
+                <input id="climbingFramesFileCamera" type="file" accept="image/*" capture="camera" style="display:none;">
+                <button class="camera-button" type="button" onclick="openCamera('climbingFramesFileCamera')">📷</button>
+              </div>
+              <div>
+                <input id="climbingFramesFileUpload" type="file" accept="image/*" style="display:none;">
+                <button class="upload-button" type="button" onclick="openUpload('climbingFramesFileUpload')">Upload</button>
+              </div>
+              <div class="image-loaded">
+                <input type="checkbox" id="climbingFramesFileCamera_check" disabled>
+              </div>
+            </div>
+          </td>
+        </tr>
+
+        <!-- Turntable and Slewing Ring -->
+        <tr class="sub-header">
+          <td colspan="7">Turntable and Slewing Ring</td>
+        </tr>
+        <tr>
+          <td>Turntable / Slewing Ring</td>
+          <td>Check bolts & fasteners for tightness, wear. Inspect ring for cracks, proper lube, abnormal noise. (OSHA 1926.1412(d)(1)(ix)) & (ASME 5-2.1.3)</td>
+          <td><input type="checkbox" name="slewing_ring_pass"></td>
+          <td><input type="checkbox" name="slewing_ring_fail"></td>
+          <td><input type="checkbox" name="slewing_ring_na"></td>
+          <td><input type="text" name="slewing_ring_remarks" placeholder="Notes"></td>
+          <td>
+            <div class="photo-buttons">
+              <div>
+                <input id="slewingRingFileCamera" type="file" accept="image/*" capture="camera" style="display:none;">
+                <button class="camera-button" type="button" onclick="openCamera('slewingRingFileCamera')">📷</button>
+              </div>
+              <div>
+                <input id="slewingRingFileUpload" type="file" accept="image/*" style="display:none;">
+                <button class="upload-button" type="button" onclick="openUpload('slewingRingFileUpload')">Upload</button>
+              </div>
+              <div class="image-loaded">
+                <input type="checkbox" id="slewingRingFileCamera_check" disabled>
+              </div>
+            </div>
+          </td>
+        </tr>
+
+        <!-- =======================
+             BOOM AND JIB
+        ======================= -->
+        <tr class="section-header">
+          <td colspan="7">Boom and Jib (Luffing or Fixed)</td>
+        </tr>
+        <!-- Main Boom -->
+        <tr class="sub-header">
+          <td colspan="7">Main Boom</td>
+        </tr>
+        <tr>
+          <td>Main Boom</td>
+          <td>Inspect for cracks, bends, or structural damage. Verify indicators are operational. (OSHA 1926.1416(c)) & (ASME 5-2.4.2)</td>
+          <td><input type="checkbox" name="main_boom_pass"></td>
+          <td><input type="checkbox" name="main_boom_fail"></td>
+          <td><input type="checkbox" name="main_boom_na"></td>
+          <td><input type="text" name="main_boom_remarks" placeholder="Notes"></td>
+          <td>
+            <div class="photo-buttons">
+              <div>
+                <input id="mainBoomFileCamera" type="file" accept="image/*" capture="camera" style="display:none;">
+                <button class="camera-button" type="button" onclick="openCamera('mainBoomFileCamera')">📷</button>
+              </div>
+              <div>
+                <input id="mainBoomFileUpload" type="file" accept="image/*" style="display:none;">
+                <button class="upload-button" type="button" onclick="openUpload('mainBoomFileUpload')">Upload</button>
+              </div>
+              <div class="image-loaded">
+                <input type="checkbox" id="mainBoomFileCamera_check" disabled>
+              </div>
+            </div>
+          </td>
+        </tr>
+
+        <!-- Jib -->
+        <tr class="sub-header">
+          <td colspan="7">Jib</td>
+        </tr>
+        <tr>
+          <td>Jib (Fixed or Luffing)</td>
+          <td>Inspect for deformation or damage. Check connection points for secure attachment. (OSHA 1926.1412(d)(1)(i)) & (ASME 5-2.1.9)</td>
+          <td><input type="checkbox" name="jib_pass"></td>
+          <td><input type="checkbox" name="jib_fail"></td>
+          <td><input type="checkbox" name="jib_na"></td>
+          <td><input type="text" name="jib_remarks" placeholder="Notes"></td>
+          <td>
+            <div class="photo-buttons">
+              <div>
+                <input id="jibFileCamera" type="file" accept="image/*" capture="camera" style="display:none;">
+                <button class="camera-button" type="button" onclick="openCamera('jibFileCamera')">📷</button>
+              </div>
+              <div>
+                <input id="jibFileUpload" type="file" accept="image/*" style="display:none;">
+                <button class="upload-button" type="button" onclick="openUpload('jibFileUpload')">Upload</button>
+              </div>
+              <div class="image-loaded">
+                <input type="checkbox" id="jibFileCamera_check" disabled>
+              </div>
+            </div>
+          </td>
+        </tr>
+
+        <!-- Guy Lines and Pendants -->
+        <tr>
+          <td>Guy Lines & Pendants</td>
+          <td>Verify correct tension. Inspect for corrosion, wear, broken strands. (OSHA 1926.1413(a)) & (ASME 5-2.4.3)</td>
+          <td><input type="checkbox" name="guy_lines_pass"></td>
+          <td><input type="checkbox" name="guy_lines_fail"></td>
+          <td><input type="checkbox" name="guy_lines_na"></td>
+          <td><input type="text" name="guy_lines_remarks" placeholder="Notes"></td>
+          <td>
+            <div class="photo-buttons">
+              <div>
+                <input id="guyLinesFileCamera" type="file" accept="image/*" capture="camera" style="display:none;">
+                <button class="camera-button" type="button" onclick="openCamera('guyLinesFileCamera')">📷</button>
+              </div>
+              <div>
+                <input id="guyLinesFileUpload" type="file" accept="image/*" style="display:none;">
+                <button class="upload-button" type="button" onclick="openUpload('guyLinesFileUpload')">Upload</button>
+              </div>
+              <div class="image-loaded">
+                <input type="checkbox" id="guyLinesFileCamera_check" disabled>
+              </div>
+            </div>
+          </td>
+        </tr>
+
+        <!-- =======================
+             LOAD HANDLING EQUIPMENT
+        ======================= -->
+        <tr class="section-header">
+          <td colspan="7">Load Handling Equipment</td>
+        </tr>
+        <!-- Hooks and Safety Latches -->
+        <tr class="sub-header">
+          <td colspan="7">Hooks & Latches</td>
+        </tr>
+        <tr>
+          <td>Hooks & Safety Latches</td>
+          <td>Inspect hooks for deformation, cracks, proper safety latch operation. Verify free swivel. (OSHA 1926.1412(f)(2)(iii)) & (ASME 5-2.1.9)</td>
+          <td><input type="checkbox" name="hooks_pass"></td>
+          <td><input type="checkbox" name="hooks_fail"></td>
+          <td><input type="checkbox" name="hooks_na"></td>
+          <td><input type="text" name="hooks_remarks" placeholder="Notes"></td>
+          <td>
+            <div class="photo-buttons">
+              <div>
+                <input id="hooksFileCamera" type="file" accept="image/*" capture="camera" style="display:none;">
+                <button class="camera-button" type="button" onclick="openCamera('hooksFileCamera')">📷</button>
+              </div>
+              <div>
+                <input id="hooksFileUpload" type="file" accept="image/*" style="display:none;">
+                <button class="upload-button" type="button" onclick="openUpload('hooksFileUpload')">Upload</button>
+              </div>
+              <div class="image-loaded">
+                <input type="checkbox" id="hooksFileCamera_check" disabled>
+              </div>
+            </div>
+          </td>
+        </tr>
+
+        <!-- Wire Ropes -->
+        <tr class="sub-header">
+          <td colspan="7">Wire Ropes</td>
+        </tr>
+        <tr>
+          <td>Wire Ropes</td>
+          <td>Inspect for frays, broken strands, kinks, corrosion, or flattening. Verify reeving per specs. (OSHA 1926.1413(a)) & (ASME 5-2.4.1)</td>
+          <td><input type="checkbox" name="wire_ropes_pass"></td>
+          <td><input type="checkbox" name="wire_ropes_fail"></td>
+          <td><input type="checkbox" name="wire_ropes_na"></td>
+          <td><input type="text" name="wire_ropes_remarks" placeholder="Notes"></td>
+          <td>
+            <div class="photo-buttons">
+              <div>
+                <input id="wireRopesFileCamera" type="file" accept="image/*" capture="camera" style="display:none;">
+                <button class="camera-button" type="button" onclick="openCamera('wireRopesFileCamera')">📷</button>
+              </div>
+              <div>
+                <input id="wireRopesFileUpload" type="file" accept="image/*" style="display:none;">
+                <button class="upload-button" type="button" onclick="openUpload('wireRopesFileUpload')">Upload</button>
+              </div>
+              <div class="image-loaded">
+                <input type="checkbox" id="wireRopesFileCamera_check" disabled>
+              </div>
+            </div>
+          </td>
+        </tr>
+
+        <!-- Load Block and Sheaves -->
+        <tr class="sub-header">
+          <td colspan="7">Load Block & Sheaves</td>
+        </tr>
+        <tr>
+          <td>Load Block / Sheaves</td>
+          <td>Check sheaves for alignment, wear, lubrication. Inspect load blocks for integrity & secure attachments. (OSHA 1926.1412(f)(2)(iii)) & (ASME 5-2.4.3)</td>
+          <td><input type="checkbox" name="load_block_pass"></td>
+          <td><input type="checkbox" name="load_block_fail"></td>
+          <td><input type="checkbox" name="load_block_na"></td>
+          <td><input type="text" name="load_block_remarks" placeholder="Notes"></td>
+          <td>
+            <div class="photo-buttons">
+              <div>
+                <input id="loadBlockFileCamera" type="file" accept="image/*" capture="camera" style="display:none;">
+                <button class="camera-button" type="button" onclick="openCamera('loadBlockFileCamera')">📷</button>
+              </div>
+              <div>
+                <input id="loadBlockFileUpload" type="file" accept="image/*" style="display:none;">
+                <button class="upload-button" type="button" onclick="openUpload('loadBlockFileUpload')">Upload</button>
+              </div>
+              <div class="image-loaded">
+                <input type="checkbox" id="loadBlockFileCamera_check" disabled>
+              </div>
+            </div>
+          </td>
+        </tr>
+
+        <!-- =======================
+             MECHANICAL SYSTEMS
+        ======================= -->
+        <tr class="section-header">
+          <td colspan="7">Mechanical Systems</td>
+        </tr>
+        <!-- Hoist Mechanism -->
+        <tr class="sub-header">
+          <td colspan="7">Hoist Mechanism</td>
+        </tr>
+        <tr>
+          <td>Hoist Mechanism</td>
+          <td>Inspect drums, brakes, clutches for wear. Verify wire rope spooling. (OSHA 1926.1412(f)(2)(i)) & (ASME 5-2.4.2)</td>
+          <td><input type="checkbox" name="hoist_mechanism_pass"></td>
+          <td><input type="checkbox" name="hoist_mechanism_fail"></td>
+          <td><input type="checkbox" name="hoist_mechanism_na"></td>
+          <td><input type="text" name="hoist_mechanism_remarks" placeholder="Notes"></td>
+          <td>
+            <div class="photo-buttons">
+              <div>
+                <input id="hoistMechanismFileCamera" type="file" accept="image/*" capture="camera" style="display:none;">
+                <button class="camera-button" type="button" onclick="openCamera('hoistMechanismFileCamera')">📷</button>
+              </div>
+              <div>
+                <input id="hoistMechanismFileUpload" type="file" accept="image/*" style="display:none;">
+                <button class="upload-button" type="button" onclick="openUpload('hoistMechanismFileUpload')">Upload</button>
+              </div>
+              <div class="image-loaded">
+                <input type="checkbox" id="hoistMechanismFileCamera_check" disabled>
+              </div>
+            </div>
+          </td>
+        </tr>
+
+        <!-- Counterweights -->
+        <tr class="sub-header">
+          <td colspan="7">Counterweights</td>
+        </tr>
+        <tr>
+          <td>Counterweights</td>
+          <td>Ensure secure installation, free of cracks/damage. Verify alignment & placement. (OSHA 1926.1412(f)(2)(iv)) & (ASME 5-2.1.6)</td>
+          <td><input type="checkbox" name="counterweights_pass"></td>
+          <td><input type="checkbox" name="counterweights_fail"></td>
+          <td><input type="checkbox" name="counterweights_na"></td>
+          <td><input type="text" name="counterweights_remarks" placeholder="Notes"></td>
+          <td>
+            <div class="photo-buttons">
+              <div>
+                <input id="counterweightsFileCamera" type="file" accept="image/*" capture="camera" style="display:none;">
+                <button class="camera-button" type="button" onclick="openCamera('counterweightsFileCamera')">📷</button>
+              </div>
+              <div>
+                <input id="counterweightsFileUpload" type="file" accept="image/*" style="display:none;">
+                <button class="upload-button" type="button" onclick="openUpload('counterweightsFileUpload')">Upload</button>
+              </div>
+              <div class="image-loaded">
+                <input type="checkbox" id="counterweightsFileCamera_check" disabled>
+              </div>
+            </div>
+          </td>
+        </tr>
+
+        <!-- =======================
+             SAFETY SYSTEMS
+        ======================= -->
+        <tr class="section-header">
+          <td colspan="7">Safety Systems</td>
+        </tr>
+        <!-- Anti-Two-Block Devices -->
+        <tr class="sub-header">
+          <td colspan="7">Anti-Two-Block Devices</td>
+        </tr>
+        <tr>
+          <td>Anti-Two-Block Devices</td>
+          <td>Ensure devices prevent overhoisting & alarms activate. (OSHA 1926.1416(d)) & (ASME 5-2.1.9)</td>
+          <td><input type="checkbox" name="anti_twoblock_pass"></td>
+          <td><input type="checkbox" name="anti_twoblock_fail"></td>
+          <td><input type="checkbox" name="anti_twoblock_na"></td>
+          <td><input type="text" name="anti_twoblock_remarks" placeholder="Notes"></td>
+          <td>
+            <div class="photo-buttons">
+              <div>
+                <input id="antiTwoblockFileCamera" type="file" accept="image/*" capture="camera" style="display:none;">
+                <button class="camera-button" type="button" onclick="openCamera('antiTwoblockFileCamera')">📷</button>
+              </div>
+              <div>
+                <input id="antiTwoblockFileUpload" type="file" accept="image/*" style="display:none;">
+                <button class="upload-button" type="button" onclick="openUpload('antiTwoblockFileUpload')">Upload</button>
+              </div>
+              <div class="image-loaded">
+                <input type="checkbox" id="antiTwoblockFileCamera_check" disabled>
+              </div>
+            </div>
+          </td>
+        </tr>
+
+        <!-- Load Moment Indicators (LMI) -->
+        <tr class="sub-header">
+          <td colspan="7">Load Moment Indicators (LMI)</td>
+        </tr>
+        <tr>
+          <td>Load Moment Indicators</td>
+          <td>Inspect calibration & operation. Verify displays & alarms. (OSHA 1926.1416(e)(1)) & (ASME 5-2.1.9)</td>
+          <td><input type="checkbox" name="lmi_pass"></td>
+          <td><input type="checkbox" name="lmi_fail"></td>
+          <td><input type="checkbox" name="lmi_na"></td>
+          <td><input type="text" name="lmi_remarks" placeholder="Notes"></td>
+          <td>
+            <div class="photo-buttons">
+              <div>
+                <input id="lmiFileCamera" type="file" accept="image/*" capture="camera" style="display:none;">
+                <button class="camera-button" type="button" onclick="openCamera('lmiFileCamera')">📷</button>
+              </div>
+              <div>
+                <input id="lmiFileUpload" type="file" accept="image/*" style="display:none;">
+                <button class="upload-button" type="button" onclick="openUpload('lmiFileUpload')">Upload</button>
+              </div>
+              <div class="image-loaded">
+                <input type="checkbox" id="lmiFileCamera_check" disabled>
+              </div>
+            </div>
+          </td>
+        </tr>
+
+        <!-- Wind Speed Indicators -->
+        <tr class="sub-header">
+          <td colspan="7">Wind Speed Indicators</td>
+        </tr>
+        <tr>
+          <td>Wind Speed Indicators</td>
+          <td>Confirm functionality, accuracy, and compliance with wind limits. (OSHA 1926.1431(k)) & (ASME 5-2.1.10)</td>
+          <td><input type="checkbox" name="wind_speed_pass"></td>
+          <td><input type="checkbox" name="wind_speed_fail"></td>
+          <td><input type="checkbox" name="wind_speed_na"></td>
+          <td><input type="text" name="wind_speed_remarks" placeholder="Notes"></td>
+          <td>
+            <div class="photo-buttons">
+              <div>
+                <input id="windSpeedFileCamera" type="file" accept="image/*" capture="camera" style="display:none;">
+                <button class="camera-button" type="button" onclick="openCamera('windSpeedFileCamera')">📷</button>
+              </div>
+              <div>
+                <input id="windSpeedFileUpload" type="file" accept="image/*" style="display:none;">
+                <button class="upload-button" type="button" onclick="openUpload('windSpeedFileUpload')">Upload</button>
+              </div>
+              <div class="image-loaded">
+                <input type="checkbox" id="windSpeedFileCamera_check" disabled>
+              </div>
+            </div>
+          </td>
+        </tr>
+
+        <!-- =======================
+             ELECTRICAL SYSTEMS
+        ======================= -->
+        <tr class="section-header">
+          <td colspan="7">Electrical Systems</td>
+        </tr>
+        <!-- Wiring and Connections -->
+        <tr class="sub-header">
+          <td colspan="7">Wiring and Connections</td>
+        </tr>
+        <tr>
+          <td>Wiring & Connections</td>
+          <td>Inspect for cracked insulation, loose connections, corrosion. Verify grounding. (OSHA 1926.1412(d)(1)(xiv)) & (ASME 5-2.4.3)</td>
+          <td><input type="checkbox" name="wiring_pass"></td>
+          <td><input type="checkbox" name="wiring_fail"></td>
+          <td><input type="checkbox" name="wiring_na"></td>
+          <td><input type="text" name="wiring_remarks" placeholder="Notes"></td>
+          <td>
+            <div class="photo-buttons">
+              <div>
+                <input id="wiringFileCamera" type="file" accept="image/*" capture="camera" style="display:none;">
+                <button class="camera-button" type="button" onclick="openCamera('wiringFileCamera')">📷</button>
+              </div>
+              <div>
+                <input id="wiringFileUpload" type="file" accept="image/*" style="display:none;">
+                <button class="upload-button" type="button" onclick="openUpload('wiringFileUpload')">Upload</button>
+              </div>
+              <div class="image-loaded">
+                <input type="checkbox" id="wiringFileCamera_check" disabled>
+              </div>
+            </div>
+          </td>
+        </tr>
+
+        <!-- Control Systems -->
+        <tr class="sub-header">
+          <td colspan="7">Control Systems</td>
+        </tr>
+        <tr>
+          <td>Control Systems</td>
+          <td>Check joysticks, pedals, E-stops for wear. Verify displays & indicators are functional. (OSHA 1926.1412(d)(1)(xiv)) & (ASME 5-2.1.8)</td>
+          <td><input type="checkbox" name="control_systems_pass"></td>
+          <td><input type="checkbox" name="control_systems_fail"></td>
+          <td><input type="checkbox" name="control_systems_na"></td>
+          <td><input type="text" name="control_systems_remarks" placeholder="Notes"></td>
+          <td>
+            <div class="photo-buttons">
+              <div>
+                <input id="controlSystemsFileCamera" type="file" accept="image/*" capture="camera" style="display:none;">
+                <button class="camera-button" type="button" onclick="openCamera('controlSystemsFileCamera')">📷</button>
+              </div>
+              <div>
+                <input id="controlSystemsFileUpload" type="file" accept="image/*" style="display:none;">
+                <button class="upload-button" type="button" onclick="openUpload('controlSystemsFileUpload')">Upload</button>
+              </div>
+              <div class="image-loaded">
+                <input type="checkbox" id="controlSystemsFileCamera_check" disabled>
+              </div>
+            </div>
+          </td>
+        </tr>
+
+        <!-- =======================
+             ENVIRONMENTAL CONSIDERATIONS
+        ======================= -->
+        <tr class="section-header">
+          <td colspan="7">Environmental Considerations</td>
+        </tr>
+        <!-- Ground Conditions -->
+        <tr class="sub-header">
+          <td colspan="7">Ground Conditions</td>
+        </tr>
+        <tr>
+          <td>Ground Conditions</td>
+          <td>Verify level, stable ground for the crane and loads. Check for settling or changes. (OSHA 1926.1402) & (ASME 5-2.1.4)</td>
+          <td><input type="checkbox" name="ground_conditions_pass"></td>
+          <td><input type="checkbox" name="ground_conditions_fail"></td>
+          <td><input type="checkbox" name="ground_conditions_na"></td>
+          <td><input type="text" name="ground_conditions_remarks" placeholder="Notes"></td>
+          <td>
+            <div class="photo-buttons">
+              <div>
+                <input id="groundConditionsFileCamera" type="file" accept="image/*" capture="camera" style="display:none;">
+                <button class="camera-button" type="button" onclick="openCamera('groundConditionsFileCamera')">📷</button>
+              </div>
+              <div>
+                <input id="groundConditionsFileUpload" type="file" accept="image/*" style="display:none;">
+                <button class="upload-button" type="button" onclick="openUpload('groundConditionsFileUpload')">Upload</button>
+              </div>
+              <div class="image-loaded">
+                <input type="checkbox" id="groundConditionsFileCamera_check" disabled>
+              </div>
+            </div>
+          </td>
+        </tr>
+
+        <!-- Weather and Wind -->
+        <tr class="sub-header">
+          <td colspan="7">Weather and Wind</td>
+        </tr>
+        <tr>
+          <td>Weather & Wind</td>
+          <td>Ensure operations are within acceptable wind/weather. Inspect weatherproofing of components. (OSHA 1926.1431(k)) & (ASME 5-2.1.10)</td>
+          <td><input type="checkbox" name="weather_wind_pass"></td>
+          <td><input type="checkbox" name="weather_wind_fail"></td>
+          <td><input type="checkbox" name="weather_wind_na"></td>
+          <td><input type="text" name="weather_wind_remarks" placeholder="Notes"></td>
+          <td>
+            <div class="photo-buttons">
+              <div>
+                <input id="weatherWindFileCamera" type="file" accept="image/*" capture="camera" style="display:none;">
+                <button class="camera-button" type="button" onclick="openCamera('weatherWindFileCamera')">📷</button>
+              </div>
+              <div>
+                <input id="weatherWindFileUpload" type="file" accept="image/*" style="display:none;">
+                <button class="upload-button" type="button" onclick="openUpload('weatherWindFileUpload')">Upload</button>
+              </div>
+              <div class="image-loaded">
+                <input type="checkbox" id="weatherWindFileCamera_check" disabled>
+              </div>
+            </div>
+          </td>
+        </tr>
+
+        <!-- =======================
+             DOCUMENTATION
+        ======================= -->
+        <tr class="section-header">
+          <td colspan="7">Documentation</td>
+        </tr>
+        <!-- Inspection Reports -->
+        <tr class="sub-header">
+          <td colspan="7">Inspection Reports</td>
+        </tr>
+        <tr>
+          <td>Inspection Reports</td>
+          <td>Document results, deficiencies, corrective actions. Keep for 12 months. (OSHA 1926.1412(f)(7)) & (ASME 5-2.1.11)</td>
+          <td><input type="checkbox" name="reports_pass"></td>
+          <td><input type="checkbox" name="reports_fail"></td>
+          <td><input type="checkbox" name="reports_na"></td>
+          <td><input type="text" name="reports_remarks" placeholder="Notes"></td>
+          <td>
+            <div class="photo-buttons">
+              <div>
+                <input id="reportsFileCamera" type="file" accept="image/*" capture="camera" style="display:none;">
+                <button class="camera-button" type="button" onclick="openCamera('reportsFileCamera')">📷</button>
+              </div>
+              <div>
+                <input id="reportsFileUpload" type="file" accept="image/*" style="display:none;">
+                <button class="upload-button" type="button" onclick="openUpload('reportsFileUpload')">Upload</button>
+              </div>
+              <div class="image-loaded">
+                <input type="checkbox" id="reportsFileCamera_check" disabled>
+              </div>
+            </div>
+          </td>
+        </tr>
+
+        <!-- Manufacturer Manuals -->
+        <tr class="sub-header">
+          <td colspan="7">Manufacturer Manuals</td>
+        </tr>
+        <tr>
+          <td>Manufacturer Manuals</td>
+          <td>Verify manuals availability. Ensure inspections follow manufacturer specs. (OSHA 1926.1412(c)) & (ASME 5-2.1.11)</td>
+          <td><input type="checkbox" name="manuals_pass"></td>
+          <td><input type="checkbox" name="manuals_fail"></td>
+          <td><input type="checkbox" name="manuals_na"></td>
+          <td><input type="text" name="manuals_remarks" placeholder="Notes"></td>
+          <td>
+            <div class="photo-buttons">
+              <div>
+                <input id="manualsFileCamera" type="file" accept="image/*" capture="camera" style="display:none;">
+                <button class="camera-button" type="button" onclick="openCamera('manualsFileCamera')">📷</button>
+              </div>
+              <div>
+                <input id="manualsFileUpload" type="file" accept="image/*" style="display:none;">
+                <button class="upload-button" type="button" onclick="openUpload('manualsFileUpload')">Upload</button>
+              </div>
+              <div class="image-loaded">
+                <input type="checkbox" id="manualsFileCamera_check" disabled>
+              </div>
+            </div>
+          </td>
+        </tr>
+
+      </tbody>
+    </table>
+
+    <!-- Signature & Email Section -->
+    <div class="signature-section">
+      <div>
+        <label for="signature">Signature:</label>
+        <input type="text" id="signature" name="signature" placeholder="Type your name or sign here">
+      </div>
+      <div>
+        <label for="email1">Email #1:</label>
+        <input type="email" id="email1" name="email1" placeholder="someone@example.com">
+      </div>
+      <div>
+        <label for="email2">Email #2:</label>
+        <input type="email" id="email2" name="email2" placeholder="another@example.com">
+      </div>
+    </div>
+
+    <!-- Submit button -->
+    <div class="submit-section">
+      <button type="submit">Submit Inspection</button>
+    </div>
+  </form>
+</div>
+
+<!-- Link to external JavaScript -->
+<script src="towercrane.js"></script>
+</body>
+</html>

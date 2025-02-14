@@ -67,9 +67,7 @@
     text-align: left;
     position: sticky;
     top: 0;
-    /* Make sure the header appears on top when scrolling */
     z-index: 999;
-    /* Add a slight border or box-shadow if desired */
   }
   
   th, td {
@@ -93,12 +91,12 @@
     font-weight: bold;
   }
   
-  /* Make first column a bit narrower (optional) */
+  /* Column widths */
   td:nth-child(1) {
-    width: 17%;
+    width: 16%;
   }
   td:nth-child(2) {
-    width: 33%;
+    width: 34%;
   }
   td:nth-child(3),
   td:nth-child(4),
@@ -109,7 +107,7 @@
     width: 20%;
   }
   td:nth-child(7) {
-    width: 5%;
+    width: 10%;
   }
   
   /* Checkbox styling */
@@ -129,16 +127,35 @@
   }
   
   /* =========================================
-     Camera Button
+     Photo Buttons Area
   ========================================= */
-  .camera-button {
-    background: transparent;
-    border: none;
-    font-size: 1.2em; /* Increase size if you'd like */
-    cursor: pointer;
+  .photo-buttons {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 6px;
+    align-items: center;
   }
-  .camera-button:hover {
-    opacity: 0.7;
+  .photo-buttons > div {
+    display: flex;
+    align-items: center;
+  }
+  .image-loaded {
+    margin-left: 5px;
+  }
+  
+  /* Camera & Upload Buttons */
+  .camera-button,
+  .upload-button {
+    background: transparent;
+    border: 1px solid #0077b6;
+    border-radius: 4px;
+    cursor: pointer;
+    padding: 4px 6px;
+    font-size: 1em;
+  }
+  .camera-button:hover,
+  .upload-button:hover {
+    background-color: #e0f7ff;
   }
   
   /* =========================================
@@ -188,5 +205,17 @@
   
   button[type="submit"]:hover {
     background-color: #005f8a;
+  }
+  
+  /* =========================================
+     Optional Preview Styling (if needed)
+  ========================================= */
+  .photo-preview {
+    display: block;
+    margin-top: 5px;
+    max-width: 80px;
+    max-height: 80px;
+    border: 1px solid #999;
+    border-radius: 4px;
   }
   

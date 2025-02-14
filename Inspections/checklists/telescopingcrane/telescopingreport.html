@@ -55,27 +55,30 @@
       </tr>
     </thead>
     <tbody>
-      <!-- (Shortened here for brevity, but keep your entire existing table structure) -->
-      <!-- The IDs below must match exactly what we set in telescopingreport.js -->
-      <!-- Example for boom inner sections: -->
+      <!-- =======================
+           BOOM ASSEMBLY
+      ======================= -->
       <tr class="section-header">
         <td colspan="7">Boom Assembly (Telescoping Boom)</td>
       </tr>
+      <!-- Telescoping Boom Sections -->
       <tr class="sub-header">
         <td colspan="7">Telescoping Boom Sections</td>
       </tr>
       <tr>
         <td>Inner Sections</td>
-        <td>Sliding sections that extend within each other.</td>
+        <td>Sliding sections that extend within each other.  
+          <br>(OSHA 1926.1412(f)(2)(i), ASME B30.5-2.1.3(a))</td>
         <td><span id="boom_inner_pass"></span></td>
         <td><span id="boom_inner_fail"></span></td>
         <td><span id="boom_inner_na"></span></td>
         <td><span id="boom_inner_remarks"></span></td>
-        <td><!-- Photo placeholder --></td>
+        <td></td>
       </tr>
       <tr>
         <td>Outer Section</td>
-        <td>The largest, non-sliding part of the boom.</td>
+        <td>The largest, non-sliding part of the boom.  
+          <br>(OSHA 1926.1412(f)(2)(i), ASME B30.5-2.1.3(a))</td>
         <td><span id="boom_outer_pass"></span></td>
         <td><span id="boom_outer_fail"></span></td>
         <td><span id="boom_outer_na"></span></td>
@@ -84,7 +87,8 @@
       </tr>
       <tr>
         <td>Wear Pads</td>
-        <td>Reduce friction &amp; protect boom sections.</td>
+        <td>Reduce friction & protect sections.  
+          <br>(OSHA 1926.1412(f)(2)(iv), ASME B30.5-2.1.3(d))</td>
         <td><span id="boom_wearpads_pass"></span></td>
         <td><span id="boom_wearpads_fail"></span></td>
         <td><span id="boom_wearpads_na"></span></td>
@@ -98,7 +102,8 @@
       </tr>
       <tr>
         <td>Piston Rod</td>
-        <td>Extends/retracts boom sections.</td>
+        <td>Extends/retracts boom sections.  
+          <br>(OSHA 1926.1412(f)(2)(ii), ASME B30.5-2.1.3(j))</td>
         <td><span id="piston_rod_pass"></span></td>
         <td><span id="piston_rod_fail"></span></td>
         <td><span id="piston_rod_na"></span></td>
@@ -107,7 +112,8 @@
       </tr>
       <tr>
         <td>Cylinder Barrel</td>
-        <td>Houses the hydraulic fluid &amp; piston.</td>
+        <td>Houses the hydraulic fluid & piston.  
+          <br>(OSHA 1926.1412(f)(2)(viii), ASME B30.5-2.1.3(l))</td>
         <td><span id="cylinder_barrel_pass"></span></td>
         <td><span id="cylinder_barrel_fail"></span></td>
         <td><span id="cylinder_barrel_na"></span></td>
@@ -121,7 +127,8 @@
       </tr>
       <tr>
         <td>Sheaves (Pulleys)</td>
-        <td>Grooved wheels guiding wire rope.</td>
+        <td>Grooved wheels guiding wire rope.  
+          <br>(OSHA 1926.1413(c)(2), ASME B30.5-2.1.3(d))</td>
         <td><span id="boom_head_sheaves_pass"></span></td>
         <td><span id="boom_head_sheaves_fail"></span></td>
         <td><span id="boom_head_sheaves_na"></span></td>
@@ -130,7 +137,8 @@
       </tr>
       <tr>
         <td>Boom Point Roller Bearings</td>
-        <td>Reduce friction at the boom tip.</td>
+        <td>Reduce friction at the boom tip.  
+          <br>(OSHA 1926.1412(f)(2)(iii), ASME B30.5-2.1.3(d))</td>
         <td><span id="boom_point_roller_pass"></span></td>
         <td><span id="boom_point_roller_fail"></span></td>
         <td><span id="boom_point_roller_na"></span></td>
@@ -139,7 +147,8 @@
       </tr>
       <tr>
         <td>Load Block Attachments</td>
-        <td>Connects load block or hook assembly.</td>
+        <td>Connects load block or hook assembly.  
+          <br>(OSHA 1926.1412(d)(1)(i), ASME B30.5-2.1.3(d))</td>
         <td><span id="load_block_attachments_pass"></span></td>
         <td><span id="load_block_attachments_fail"></span></td>
         <td><span id="load_block_attachments_na"></span></td>
@@ -153,7 +162,8 @@
       </tr>
       <tr>
         <td>Mounting Pins</td>
-        <td>Connects the boom to the turntable.</td>
+        <td>Connects boom to the turntable.  
+          <br>(OSHA 1926.1412(d)(1)(i), ASME B30.5-2.1.3(d))</td>
         <td><span id="mounting_pins_pass"></span></td>
         <td><span id="mounting_pins_fail"></span></td>
         <td><span id="mounting_pins_na"></span></td>
@@ -162,7 +172,8 @@
       </tr>
       <tr>
         <td>Hydraulic Connections</td>
-        <td>Supplies fluid for extension/retraction.</td>
+        <td>Supplies fluid for extension/retraction.  
+          <br>(OSHA 1926.1412(f)(2)(viii), ASME B30.5-2.1.3(j))</td>
         <td><span id="base_hydraulic_connections_pass"></span></td>
         <td><span id="base_hydraulic_connections_fail"></span></td>
         <td><span id="base_hydraulic_connections_na"></span></td>
@@ -171,7 +182,8 @@
       </tr>
       <tr>
         <td>Boom Stops</td>
-        <td>Prevent overextension/improper angle.</td>
+        <td>Prevent overextension/improper angle.  
+          <br>(OSHA 1926.1416(d), ASME B30.5-2.1.3(n))</td>
         <td><span id="boom_stops_pass"></span></td>
         <td><span id="boom_stops_fail"></span></td>
         <td><span id="boom_stops_na"></span></td>
@@ -185,7 +197,8 @@
       </tr>
       <tr>
         <td>Fixed Jibs</td>
-        <td>Permanently attached.</td>
+        <td>Permanently attached.  
+          <br>(OSHA 1926.1412(f)(2)(i), ASME B30.5-2.1.3(a))</td>
         <td><span id="fixed_jibs_pass"></span></td>
         <td><span id="fixed_jibs_fail"></span></td>
         <td><span id="fixed_jibs_na"></span></td>
@@ -194,7 +207,8 @@
       </tr>
       <tr>
         <td>Luffing Jibs</td>
-        <td>Adjustable angle extensions.</td>
+        <td>Adjustable angle extensions.  
+          <br>(OSHA 1926.1412(f)(2)(i), ASME B30.5-2.1.3(a))</td>
         <td><span id="luffing_jibs_pass"></span></td>
         <td><span id="luffing_jibs_fail"></span></td>
         <td><span id="luffing_jibs_na"></span></td>
@@ -203,7 +217,8 @@
       </tr>
       <tr>
         <td>Pin Connections</td>
-        <td>Fasteners to attach jibs to the boom.</td>
+        <td>Fasteners attaching jibs to the boom.  
+          <br>(OSHA 1926.1412(d)(1)(i), ASME B30.5-2.1.3(d))</td>
         <td><span id="jib_pin_connections_pass"></span></td>
         <td><span id="jib_pin_connections_fail"></span></td>
         <td><span id="jib_pin_connections_na"></span></td>
@@ -217,7 +232,8 @@
       </tr>
       <tr>
         <td>Groove Lining</td>
-        <td>Prevents wire rope wear.</td>
+        <td>Prevents wire rope wear.  
+          <br>(OSHA 1926.1413(c)(2), ASME B30.5-2.1.3(d))</td>
         <td><span id="groove_lining_pass"></span></td>
         <td><span id="groove_lining_fail"></span></td>
         <td><span id="groove_lining_na"></span></td>
@@ -226,7 +242,8 @@
       </tr>
       <tr>
         <td>Sheave Bearings</td>
-        <td>Allow smooth rotation.</td>
+        <td>Allow smooth rotation.  
+          <br>(OSHA 1926.1412(f)(2)(iii), ASME B30.5-2.1.3(d))</td>
         <td><span id="sheave_bearings_pass"></span></td>
         <td><span id="sheave_bearings_fail"></span></td>
         <td><span id="sheave_bearings_na"></span></td>
@@ -247,7 +264,8 @@
       </tr>
       <tr>
         <td>Rotex Bearing</td>
-        <td>Supports rotation between carrier &amp; superstructure.</td>
+        <td>Supports rotation between carrier & superstructure.  
+          <br>(OSHA 1926.1412(f)(2)(iv), ASME B30.5-2.1.3(a))</td>
         <td><span id="rotex_bearing_pass"></span></td>
         <td><span id="rotex_bearing_fail"></span></td>
         <td><span id="rotex_bearing_na"></span></td>
@@ -256,7 +274,8 @@
       </tr>
       <tr>
         <td>Drive Motors</td>
-        <td>Powers the rotation mechanism.</td>
+        <td>Powers the rotation mechanism.  
+          <br>(OSHA 1926.1412(f)(2)(v), ASME B30.5-2.1.3(k))</td>
         <td><span id="turntable_drive_motors_pass"></span></td>
         <td><span id="turntable_drive_motors_fail"></span></td>
         <td><span id="turntable_drive_motors_na"></span></td>
@@ -265,7 +284,8 @@
       </tr>
       <tr>
         <td>Lubrication Channels</td>
-        <td>Ensure smooth, long-lasting operation.</td>
+        <td>Ensure smooth, long-lasting operation.  
+          <br>(OSHA 1926.1412(d)(1)(xii), ASME B30.5-2.1.3(l))</td>
         <td><span id="turntable_lubrication_pass"></span></td>
         <td><span id="turntable_lubrication_fail"></span></td>
         <td><span id="turntable_lubrication_na"></span></td>
@@ -279,7 +299,8 @@
       </tr>
       <tr>
         <td>Control Levers</td>
-        <td>Operate boom, winch, &amp; rotation.</td>
+        <td>Operate boom, winch, & rotation.  
+          <br>(OSHA 1926.1412(d)(1)(xiv), ASME B30.5-2.1.3(n))</td>
         <td><span id="control_levers_pass"></span></td>
         <td><span id="control_levers_fail"></span></td>
         <td><span id="control_levers_na"></span></td>
@@ -288,7 +309,8 @@
       </tr>
       <tr>
         <td>Digital Display Panels</td>
-        <td>Show load data &amp; boom angles.</td>
+        <td>Show load data & boom angles.  
+          <br>(OSHA 1926.1412(d)(1)(x), ASME B30.5-2.1.6)</td>
         <td><span id="display_panels_pass"></span></td>
         <td><span id="display_panels_fail"></span></td>
         <td><span id="display_panels_na"></span></td>
@@ -297,7 +319,8 @@
       </tr>
       <tr>
         <td>Cab Windows</td>
-        <td>Reinforced glass for safety &amp; visibility.</td>
+        <td>Reinforced glass for safety & visibility.  
+          <br>(OSHA 1926.1412(d)(1)(xii), ASME B30.5-2.1.3(m))</td>
         <td><span id="cab_windows_pass"></span></td>
         <td><span id="cab_windows_fail"></span></td>
         <td><span id="cab_windows_na"></span></td>
@@ -306,7 +329,8 @@
       </tr>
       <tr>
         <td>Climate Controls</td>
-        <td>Heating &amp; cooling for operator comfort.</td>
+        <td>Heating & cooling for operator comfort.  
+          <br>(OSHA 1926.1412(d)(1)(xiv), ASME B30.5-2.1.3(n))</td>
         <td><span id="climate_controls_pass"></span></td>
         <td><span id="climate_controls_fail"></span></td>
         <td><span id="climate_controls_na"></span></td>
@@ -320,7 +344,8 @@
       </tr>
       <tr>
         <td>Stackable Weights</td>
-        <td>Modular sections for varying lifting conditions.</td>
+        <td>Modular sections for varying lifting conditions.  
+          <br>(OSHA 1926.1412(d)(1)(ix), ASME B30.5-2.1.3(o))</td>
         <td><span id="stackable_weights_pass"></span></td>
         <td><span id="stackable_weights_fail"></span></td>
         <td><span id="stackable_weights_na"></span></td>
@@ -329,7 +354,8 @@
       </tr>
       <tr>
         <td>Attachment Mechanism</td>
-        <td>Pins or hydraulics for securing weights.</td>
+        <td>Pins or hydraulics for securing weights.  
+          <br>(OSHA 1926.1412(f)(2)(iv), ASME B30.5-2.1.3(p))</td>
         <td><span id="counterweight_attachment_pass"></span></td>
         <td><span id="counterweight_attachment_fail"></span></td>
         <td><span id="counterweight_attachment_na"></span></td>
@@ -338,7 +364,8 @@
       </tr>
       <tr>
         <td>Lifting Eyes</td>
-        <td>For transporting weights.</td>
+        <td>For transporting weights.  
+          <br>(OSHA 1926.1413(c)(2), ASME B30.5-2.1.3(q))</td>
         <td><span id="lifting_eyes_pass"></span></td>
         <td><span id="lifting_eyes_fail"></span></td>
         <td><span id="lifting_eyes_na"></span></td>
@@ -352,7 +379,8 @@
       </tr>
       <tr>
         <td>Swing Gear</td>
-        <td>Rotates the superstructure.</td>
+        <td>Rotates the superstructure.  
+          <br>(OSHA 1926.1412(f)(2)(iv), ASME B30.5-2.1.3(a))</td>
         <td><span id="swing_gear_pass"></span></td>
         <td><span id="swing_gear_fail"></span></td>
         <td><span id="swing_gear_na"></span></td>
@@ -361,7 +389,8 @@
       </tr>
       <tr>
         <td>Hydraulic Swing Motor</td>
-        <td>Drives the gear mechanism.</td>
+        <td>Drives the gear mechanism.  
+          <br>(OSHA 1926.1412(f)(2)(viii), ASME B30.5-2.1.3(k))</td>
         <td><span id="swing_motor_pass"></span></td>
         <td><span id="swing_motor_fail"></span></td>
         <td><span id="swing_motor_na"></span></td>
@@ -370,7 +399,8 @@
       </tr>
       <tr>
         <td>Swing Brake</td>
-        <td>Locks the crane’s rotation in place.</td>
+        <td>Locks the crane’s rotation in place.  
+          <br>(OSHA 1926.1412(f)(2)(iv), ASME B30.5-2.1.3(d))</td>
         <td><span id="swing_brake_pass"></span></td>
         <td><span id="swing_brake_fail"></span></td>
         <td><span id="swing_brake_na"></span></td>
@@ -384,7 +414,8 @@
       </tr>
       <tr>
         <td>Main Winch (Drum)</td>
-        <td>Cylindrical reel for wire rope.</td>
+        <td>Cylindrical reel for wire rope.  
+          <br>(OSHA 1926.1413(c)(2), ASME B30.5-2.1.3(d))</td>
         <td><span id="main_winch_drum_pass"></span></td>
         <td><span id="main_winch_drum_fail"></span></td>
         <td><span id="main_winch_drum_na"></span></td>
@@ -393,7 +424,8 @@
       </tr>
       <tr>
         <td>Main Winch (Brake System)</td>
-        <td>Controls wire rope tension.</td>
+        <td>Controls wire rope tension.  
+          <br>(OSHA 1926.1412(f)(2)(iv), ASME B30.5-2.1.3(e))</td>
         <td><span id="main_winch_brake_pass"></span></td>
         <td><span id="main_winch_brake_fail"></span></td>
         <td><span id="main_winch_brake_na"></span></td>
@@ -402,7 +434,8 @@
       </tr>
       <tr>
         <td>Main Winch (Hydraulic Motor)</td>
-        <td>Powers winch rotation.</td>
+        <td>Powers winch rotation.  
+          <br>(OSHA 1926.1412(f)(2)(viii), ASME B30.5-2.1.3(k))</td>
         <td><span id="main_winch_motor_pass"></span></td>
         <td><span id="main_winch_motor_fail"></span></td>
         <td><span id="main_winch_motor_na"></span></td>
@@ -411,7 +444,8 @@
       </tr>
       <tr>
         <td>Auxiliary Winch (Smaller Drum)</td>
-        <td>For secondary wire rope.</td>
+        <td>For secondary wire rope.  
+          <br>(OSHA 1926.1413(c)(2), ASME B30.5-2.1.3(d))</td>
         <td><span id="aux_winch_drum_pass"></span></td>
         <td><span id="aux_winch_drum_fail"></span></td>
         <td><span id="aux_winch_drum_na"></span></td>
@@ -420,7 +454,8 @@
       </tr>
       <tr>
         <td>Auxiliary Winch (Dedicated Motor)</td>
-        <td>Operates independent of main winch.</td>
+        <td>Operates independent of main winch.  
+          <br>(OSHA 1926.1412(f)(2)(viii), ASME B30.5-2.1.3(k))</td>
         <td><span id="aux_winch_motor_pass"></span></td>
         <td><span id="aux_winch_motor_fail"></span></td>
         <td><span id="aux_winch_motor_na"></span></td>
@@ -434,7 +469,8 @@
       </tr>
       <tr>
         <td>Gear Pump</td>
-        <td>Supplies fluid for smaller operations.</td>
+        <td>Supplies fluid for smaller operations.  
+          <br>(OSHA 1926.1412(f)(2)(viii), ASME B30.5-2.1.3(l))</td>
         <td><span id="gear_pump_pass"></span></td>
         <td><span id="gear_pump_fail"></span></td>
         <td><span id="gear_pump_na"></span></td>
@@ -443,7 +479,8 @@
       </tr>
       <tr>
         <td>Piston Pump</td>
-        <td>Handles higher pressure.</td>
+        <td>Handles higher pressure.  
+          <br>(OSHA 1926.1412(f)(2)(viii), ASME B30.5-2.1.3(l))</td>
         <td><span id="piston_pump_pass"></span></td>
         <td><span id="piston_pump_fail"></span></td>
         <td><span id="piston_pump_na"></span></td>
@@ -464,7 +501,8 @@
       </tr>
       <tr>
         <td>Frame Rails</td>
-        <td>Reinforced structure supporting the crane.</td>
+        <td>Reinforced structure supporting the crane.  
+          <br>(OSHA 1926.1412(f)(2)(i), ASME B30.5-2.1.3(a))</td>
         <td><span id="frame_rails_pass"></span></td>
         <td><span id="frame_rails_fail"></span></td>
         <td><span id="frame_rails_na"></span></td>
@@ -473,7 +511,8 @@
       </tr>
       <tr>
         <td>Axles</td>
-        <td>Distribute weight &amp; support wheels.</td>
+        <td>Distribute weight & support wheels.  
+          <br>(OSHA 1926.1412(d)(1)(ix), ASME B30.5-2.1.3(o))</td>
         <td><span id="axles_pass"></span></td>
         <td><span id="axles_fail"></span></td>
         <td><span id="axles_na"></span></td>
@@ -487,7 +526,8 @@
       </tr>
       <tr>
         <td>Telescopic Arms</td>
-        <td>Extendable arms for stability.</td>
+        <td>Extendable arms for stability.  
+          <br>(OSHA 1926.1412(d)(1)(i), ASME B30.5-2.1.3(o))</td>
         <td><span id="outriggers_telescopic_pass"></span></td>
         <td><span id="outriggers_telescopic_fail"></span></td>
         <td><span id="outriggers_telescopic_na"></span></td>
@@ -496,7 +536,8 @@
       </tr>
       <tr>
         <td>Foot Pads</td>
-        <td>Distribute weight on ground.</td>
+        <td>Distribute weight on ground.  
+          <br>(OSHA 1926.1412(f)(2)(i), ASME B30.5-2.1.3(a))</td>
         <td><span id="outriggers_footpads_pass"></span></td>
         <td><span id="outriggers_footpads_fail"></span></td>
         <td><span id="outriggers_footpads_na"></span></td>
@@ -505,7 +546,8 @@
       </tr>
       <tr>
         <td>Hydraulic Cylinders</td>
-        <td>Operate extension/retraction.</td>
+        <td>Operate extension/retraction.  
+          <br>(OSHA 1926.1412(f)(2)(viii), ASME B30.5-2.1.3(k))</td>
         <td><span id="outriggers_cylinders_pass"></span></td>
         <td><span id="outriggers_cylinders_fail"></span></td>
         <td><span id="outriggers_cylinders_na"></span></td>
@@ -526,7 +568,8 @@
       </tr>
       <tr>
         <td>Safety Latch</td>
-        <td>Prevents load slipping.</td>
+        <td>Prevents load slipping.  
+          <br>(OSHA 1926.1413(c)(2), ASME B30.5-2.1.3(d))</td>
         <td><span id="hook_safety_latch_pass"></span></td>
         <td><span id="hook_safety_latch_fail"></span></td>
         <td><span id="hook_safety_latch_na"></span></td>
@@ -535,7 +578,8 @@
       </tr>
       <tr>
         <td>Swivel Mechanism</td>
-        <td>Allows rotation under load.</td>
+        <td>Allows rotation under load.  
+          <br>(OSHA 1926.1412(d)(1)(ix), ASME B30.5-2.1.3(o))</td>
         <td><span id="hook_swivel_mech_pass"></span></td>
         <td><span id="hook_swivel_mech_fail"></span></td>
         <td><span id="hook_swivel_mech_na"></span></td>
@@ -549,7 +593,8 @@
       </tr>
       <tr>
         <td>Steel Core</td>
-        <td>Provides strength/flexibility.</td>
+        <td>Provides strength/flexibility.  
+          <br>(OSHA 1926.1413(c)(2), ASME B30.5-2.4.1)</td>
         <td><span id="wire_rope_core_pass"></span></td>
         <td><span id="wire_rope_core_fail"></span></td>
         <td><span id="wire_rope_core_na"></span></td>
@@ -558,7 +603,8 @@
       </tr>
       <tr>
         <td>Outer Strands</td>
-        <td>Protect the core, enhance durability.</td>
+        <td>Protect the core, enhance durability.  
+          <br>(OSHA 1926.1413(c)(2), ASME B30.5-2.4.1)</td>
         <td><span id="wire_rope_strands_pass"></span></td>
         <td><span id="wire_rope_strands_fail"></span></td>
         <td><span id="wire_rope_strands_na"></span></td>
@@ -572,7 +618,8 @@
       </tr>
       <tr>
         <td>Ball Weight</td>
-        <td>Keeps wire rope taut.</td>
+        <td>Keeps wire rope taut.  
+          <br>(OSHA 1926.1413(c)(2), ASME B30.5-2.1.3(d))</td>
         <td><span id="overhaul_ball_weight_pass"></span></td>
         <td><span id="overhaul_ball_weight_fail"></span></td>
         <td><span id="overhaul_ball_weight_na"></span></td>
@@ -581,7 +628,8 @@
       </tr>
       <tr>
         <td>Swivel Assembly</td>
-        <td>Prevents rope twisting.</td>
+        <td>Prevents rope twisting.  
+          <br>(OSHA 1926.1413(c)(2), ASME B30.5-2.1.3(o))</td>
         <td><span id="overhaul_ball_swivel_pass"></span></td>
         <td><span id="overhaul_ball_swivel_fail"></span></td>
         <td><span id="overhaul_ball_swivel_na"></span></td>
@@ -595,7 +643,8 @@
       </tr>
       <tr>
         <td>Shackles</td>
-        <td>U-shaped fasteners for loads.</td>
+        <td>U-shaped fasteners for loads.  
+          <br>(OSHA 1926.251(c), ASME B30.5-2.1.3(d))</td>
         <td><span id="shackles_pass"></span></td>
         <td><span id="shackles_fail"></span></td>
         <td><span id="shackles_na"></span></td>
@@ -604,7 +653,8 @@
       </tr>
       <tr>
         <td>Slings</td>
-        <td>Nylon/wire rope/chain for loads.</td>
+        <td>Nylon/wire rope/chain for loads.  
+          <br>(OSHA 1926.251(a), ASME B30.5-2.1.3(d))</td>
         <td><span id="slings_pass"></span></td>
         <td><span id="slings_fail"></span></td>
         <td><span id="slings_na"></span></td>
@@ -613,7 +663,8 @@
       </tr>
       <tr>
         <td>Spreader Bars</td>
-        <td>Distribute load weight.</td>
+        <td>Distribute load weight.  
+          <br>(OSHA 1926.251(a)(2), ASME B30.5-2.1.3(d))</td>
         <td><span id="spreader_bars_pass"></span></td>
         <td><span id="spreader_bars_fail"></span></td>
         <td><span id="spreader_bars_na"></span></td>
@@ -627,14 +678,14 @@
       <tr class="section-header">
         <td colspan="7">Hydraulic Systems</td>
       </tr>
-
       <!-- Hydraulic Cylinders -->
       <tr class="sub-header">
         <td colspan="7">Hydraulic Cylinders</td>
       </tr>
       <tr>
         <td>Seals and Gaskets</td>
-        <td>Prevent leaks.</td>
+        <td>Prevent leaks.  
+          <br>(OSHA 1926.1412(f)(2)(viii), ASME B30.5-2.1.3(l))</td>
         <td><span id="hyd_cyl_seals_pass"></span></td>
         <td><span id="hyd_cyl_seals_fail"></span></td>
         <td><span id="hyd_cyl_seals_na"></span></td>
@@ -643,7 +694,8 @@
       </tr>
       <tr>
         <td>Cylinder Rod Ends</td>
-        <td>Connect to other components.</td>
+        <td>Connect to other components.  
+          <br>(OSHA 1926.1412(f)(2)(viii), ASME B30.5-2.1.3(k))</td>
         <td><span id="cyl_rod_ends_pass"></span></td>
         <td><span id="cyl_rod_ends_fail"></span></td>
         <td><span id="cyl_rod_ends_na"></span></td>
@@ -652,7 +704,8 @@
       </tr>
       <tr>
         <td>Hydraulic Fluid Ports</td>
-        <td>Entry/exit points for fluid.</td>
+        <td>Entry/exit points for fluid.  
+          <br>(OSHA 1926.1412(f)(2)(viii), ASME B30.5-2.1.3(l))</td>
         <td><span id="cyl_fluid_ports_pass"></span></td>
         <td><span id="cyl_fluid_ports_fail"></span></td>
         <td><span id="cyl_fluid_ports_na"></span></td>
@@ -666,7 +719,8 @@
       </tr>
       <tr>
         <td>Tank Filters</td>
-        <td>Clean the hydraulic fluid.</td>
+        <td>Clean the hydraulic fluid.  
+          <br>(OSHA 1926.1412(f)(2)(viii), ASME B30.5-2.1.3(k))</td>
         <td><span id="tank_filters_pass"></span></td>
         <td><span id="tank_filters_fail"></span></td>
         <td><span id="tank_filters_na"></span></td>
@@ -675,7 +729,8 @@
       </tr>
       <tr>
         <td>Sight Gauge</td>
-        <td>Displays fluid levels.</td>
+        <td>Displays fluid levels.  
+          <br>(OSHA 1926.1412(f)(2)(viii), ASME B30.5-2.1.3(k))</td>
         <td><span id="sight_gauge_pass"></span></td>
         <td><span id="sight_gauge_fail"></span></td>
         <td><span id="sight_gauge_na"></span></td>
@@ -689,7 +744,8 @@
       </tr>
       <tr>
         <td>High-Pressure Hoses</td>
-        <td>Transport fluid to cylinders.</td>
+        <td>Transport fluid to cylinders.  
+          <br>(OSHA 1926.1412(f)(2)(viii), ASME B30.5-2.1.3(k))</td>
         <td><span id="hyd_lines_hoses_pass"></span></td>
         <td><span id="hyd_lines_hoses_fail"></span></td>
         <td><span id="hyd_lines_hoses_na"></span></td>
@@ -698,7 +754,8 @@
       </tr>
       <tr>
         <td>Fittings and Couplings</td>
-        <td>Secure connections.</td>
+        <td>Secure connections.  
+          <br>(OSHA 1926.1412(f)(2)(viii), ASME B30.5-2.1.3(k))</td>
         <td><span id="hyd_lines_fittings_pass"></span></td>
         <td><span id="hyd_lines_fittings_fail"></span></td>
         <td><span id="hyd_lines_fittings_na"></span></td>
@@ -719,7 +776,8 @@
       </tr>
       <tr>
         <td>Sensors</td>
-        <td>Measure load &amp; boom angle.</td>
+        <td>Measure load & boom angle.  
+          <br>(OSHA 1926.1416(e)(1), ASME B30.5-2.1.6)</td>
         <td><span id="lmi_sensors_pass"></span></td>
         <td><span id="lmi_sensors_fail"></span></td>
         <td><span id="lmi_sensors_na"></span></td>
@@ -728,7 +786,8 @@
       </tr>
       <tr>
         <td>Display Unit</td>
-        <td>Shows safety alerts &amp; status.</td>
+        <td>Shows safety alerts & status.  
+          <br>(OSHA 1926.1416(e)(1), ASME B30.5-2.1.6)</td>
         <td><span id="lmi_display_pass"></span></td>
         <td><span id="lmi_display_fail"></span></td>
         <td><span id="lmi_display_na"></span></td>
@@ -742,7 +801,8 @@
       </tr>
       <tr>
         <td>Proximity Switch</td>
-        <td>Detects block nearing the boom head.</td>
+        <td>Detects block nearing the boom head.  
+          <br>(OSHA 1926.1416(d)(3), ASME B30.5-2.1.6)</td>
         <td><span id="anti_twoblock_switch_pass"></span></td>
         <td><span id="anti_twoblock_switch_fail"></span></td>
         <td><span id="anti_twoblock_switch_na"></span></td>
@@ -751,7 +811,8 @@
       </tr>
       <tr>
         <td>Alarm System</td>
-        <td>Notifies operator to prevent collision.</td>
+        <td>Notifies operator to prevent collision.  
+          <br>(OSHA 1926.1416(d)(3), ASME B30.5-2.1.6)</td>
         <td><span id="anti_twoblock_alarm_pass"></span></td>
         <td><span id="anti_twoblock_alarm_fail"></span></td>
         <td><span id="anti_twoblock_alarm_na"></span></td>
@@ -765,7 +826,8 @@
       </tr>
       <tr>
         <td>Load Cells</td>
-        <td>Measure force on each outrigger.</td>
+        <td>Measure force on each outrigger.  
+          <br>(OSHA 1926.1412(d)(1)(xii), ASME B30.5-2.1.3(o))</td>
         <td><span id="outrigger_load_cells_pass"></span></td>
         <td><span id="outrigger_load_cells_fail"></span></td>
         <td><span id="outrigger_load_cells_na"></span></td>
@@ -779,7 +841,8 @@
       </tr>
       <tr>
         <td>Bubble Level</td>
-        <td>Simple leveling tool.</td>
+        <td>Simple leveling tool.  
+          <br>(OSHA 1926.1416(c), ASME B30.5-2.1.6)</td>
         <td><span id="crane_bubble_level_pass"></span></td>
         <td><span id="crane_bubble_level_fail"></span></td>
         <td><span id="crane_bubble_level_na"></span></td>
@@ -788,7 +851,8 @@
       </tr>
       <tr>
         <td>Digital Level</td>
-        <td>More precise readings.</td>
+        <td>More precise readings.  
+          <br>(OSHA 1926.1416(c), ASME B30.5-2.1.6)</td>
         <td><span id="crane_digital_level_pass"></span></td>
         <td><span id="crane_digital_level_fail"></span></td>
         <td><span id="crane_digital_level_na"></span></td>
@@ -802,7 +866,8 @@
       </tr>
       <tr>
         <td>Mechanical Arm/Sensor</td>
-        <td>Measures distance from load to center.</td>
+        <td>Measures distance from load to center.  
+          <br>(OSHA 1926.1416(c), ASME B30.5-2.1.6)</td>
         <td><span id="radius_indicator_pass"></span></td>
         <td><span id="radius_indicator_fail"></span></td>
         <td><span id="radius_indicator_na"></span></td>
@@ -823,7 +888,8 @@
       </tr>
       <tr>
         <td>Pivoting Mount</td>
-        <td>Attaches jib to main boom.</td>
+        <td>Attaches jib to main boom.  
+          <br>(OSHA 1926.1412(d)(1)(ix), ASME B30.5-2.1.3(a))</td>
         <td><span id="fly_jib_pivot_pass"></span></td>
         <td><span id="fly_jib_pivot_fail"></span></td>
         <td><span id="fly_jib_pivot_na"></span></td>
@@ -832,7 +898,8 @@
       </tr>
       <tr>
         <td>Extension Pins</td>
-        <td>Lock the jib in position.</td>
+        <td>Lock the jib in position.  
+          <br>(OSHA 1926.1412(f)(2)(iv), ASME B30.5-2.1.3(d))</td>
         <td><span id="fly_jib_extension_pins_pass"></span></td>
         <td><span id="fly_jib_extension_pins_fail"></span></td>
         <td><span id="fly_jib_extension_pins_na"></span></td>
@@ -840,74 +907,89 @@
         <td></td>
       </tr>
 
-      <!-- Lattice Extensions -->
-      <tr class="sub-header">
-        <td colspan="7">Lattice Extensions</td>
-      </tr>
-      <tr>
-        <td>Cross Bracing</td>
-        <td>Provides structural integrity.</td>
-        <td><span id="lattice_bracing_pass"></span></td>
-        <td><span id="lattice_bracing_fail"></span></td>
-        <td><span id="lattice_bracing_na"></span></td>
-        <td><span id="lattice_bracing_remarks"></span></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td>Bolt or Pin Connectors</td>
-        <td>Secure to the boom.</td>
-        <td><span id="lattice_connectors_pass"></span></td>
-        <td><span id="lattice_connectors_fail"></span></td>
-        <td><span id="lattice_connectors_na"></span></td>
-        <td><span id="lattice_connectors_remarks"></span></td>
-        <td></td>
-      </tr>
+      <!-- 
+         REMOVED: Lattice Extensions 
+         REMOVED: Man Basket 
+      -->
 
-      <!-- Man Basket -->
+      <!-- Now 5 user-defined attachments -->
       <tr class="sub-header">
-        <td colspan="7">Man Basket</td>
+        <td colspan="7">User-Defined Attachments (Up to 5)</td>
       </tr>
       <tr>
-        <td>Fall Protection</td>
-        <td>Safety harness points.</td>
-        <td><span id="man_basket_fall_protection_pass"></span></td>
-        <td><span id="man_basket_fall_protection_fail"></span></td>
-        <td><span id="man_basket_fall_protection_na"></span></td>
-        <td><span id="man_basket_fall_protection_remarks"></span></td>
+        <td><span id="user_attachment_1_name"></span></td>
+        <td><span id="user_attachment_1_desc"></span></td>
+        <td><span id="user_attachment_1_pass"></span></td>
+        <td><span id="user_attachment_1_fail"></span></td>
+        <td><span id="user_attachment_1_na"></span></td>
+        <td><span id="user_attachment_1_remarks"></span></td>
         <td></td>
       </tr>
       <tr>
-        <td>Railings</td>
-        <td>Prevents falls from the basket.</td>
-        <td><span id="man_basket_railings_pass"></span></td>
-        <td><span id="man_basket_railings_fail"></span></td>
-        <td><span id="man_basket_railings_na"></span></td>
-        <td><span id="man_basket_railings_remarks"></span></td>
+        <td><span id="user_attachment_2_name"></span></td>
+        <td><span id="user_attachment_2_desc"></span></td>
+        <td><span id="user_attachment_2_pass"></span></td>
+        <td><span id="user_attachment_2_fail"></span></td>
+        <td><span id="user_attachment_2_na"></span></td>
+        <td><span id="user_attachment_2_remarks"></span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span id="user_attachment_3_name"></span></td>
+        <td><span id="user_attachment_3_desc"></span></td>
+        <td><span id="user_attachment_3_pass"></span></td>
+        <td><span id="user_attachment_3_fail"></span></td>
+        <td><span id="user_attachment_3_na"></span></td>
+        <td><span id="user_attachment_3_remarks"></span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span id="user_attachment_4_name"></span></td>
+        <td><span id="user_attachment_4_desc"></span></td>
+        <td><span id="user_attachment_4_pass"></span></td>
+        <td><span id="user_attachment_4_fail"></span></td>
+        <td><span id="user_attachment_4_na"></span></td>
+        <td><span id="user_attachment_4_remarks"></span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span id="user_attachment_5_name"></span></td>
+        <td><span id="user_attachment_5_desc"></span></td>
+        <td><span id="user_attachment_5_pass"></span></td>
+        <td><span id="user_attachment_5_fail"></span></td>
+        <td><span id="user_attachment_5_na"></span></td>
+        <td><span id="user_attachment_5_remarks"></span></td>
         <td></td>
       </tr>
     </tbody>
   </table>
 
-  <!-- Signature & Emails -->
-  <div class="signature-section">
-    <strong>Signature:</strong> <span id="signature"></span><br>
-    <strong>Email #1:</strong> <span id="email1"></span><br>
-    <strong>Email #2:</strong> <span id="email2"></span><br>
-  </div>
+  <div class="report-container">
 
-  <!-- Print + Save Buttons -->
-  <div class="print-btn-container">
-    <button id="printBtn">Print / Save as PDF</button>
-    <button id="saveLocalBtn">Save Inspection (.json)</button>
-  </div>
-</div>
-
-<!-- NEW: Deficiencies/Hazards Page -->
-<section id="deficienciesPage">
-  <h2>Deficiencies / Hazards</h2>
-  <p>Below are photos taken during the inspection (if any):</p>
-  <div id="photosContainer"></div>
-</section>
+    <!-- ...All your table and content... -->
+  
+    <!-- Signature & Emails -->
+    <div class="signature-section">
+      <strong>Signature:</strong> <span id="signature"></span><br>
+      <strong>Email #1:</strong> <span id="email1"></span><br>
+      <strong>Email #2:</strong> <span id="email2"></span><br>
+    </div>
+  
+    <!-- Print + Save Buttons -->
+    <div class="print-btn-container">
+      <button id="printBtn">Print as PDF</button>
+      <!-- Add this Save button -->
+      <button id="saveBtn">Save</button>
+    </div>
+  
+    <!-- Deficiencies/Hazards Section INSIDE the .report-container -->
+    <section id="deficienciesPage">
+      <h2>⚠️ Deficiencies / Hazards Photos ⚠️</h2>
+      <p>Below are photos taken during the inspection (if any):</p>
+      <div id="photosContainer"></div>
+    </section>
+  
+  </div> <!-- End of .report-container -->
 
 <script src="telescopingreport.js"></script>
 </body>

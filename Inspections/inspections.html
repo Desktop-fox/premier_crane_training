@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Inspections</title>
   <!-- Link to CSS -->
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="inspections.css">
 </head>
 <body>
 
@@ -25,24 +25,35 @@
 
   <main>
     <h1>Annual Inspection Checklists</h1>
+
     <div class="inspections-container">
-      <div class="inspections-container">
-        <a href="checklists\telescopingcrane\telescopingcrane.html" class="inspection-item">
-          Telescoping Boom Crane
-        </a>
+      <!-- Telescoping Crane -->
+      <div class="inspection-item" data-equipment="telescoping">
+        Telescoping Boom Crane
       </div>
+    </div>
+
+    <div class="inspections-container">
+      <!-- Lattice Crane -->
       <div class="inspection-item" data-equipment="lattice">
         Lattice Boom Crane
       </div>
+    </div>
+
+    <div class="inspections-container">
+      <!-- Tower Crane -->
       <div class="inspection-item" data-equipment="tower">
         Tower Crane
       </div>
-        <div class="inspections-container">
-          <a href="C:\Users\Jameson\Projects\inspections-website\Forms\boom-truck-crane\boomtruckcrane.html" class="inspection-item">
-            Boom Truck Crane
-      </a>
+    </div>
+
+    <div class="inspections-container">
+      <!-- Boom Truck Crane -->
+      <div class="inspection-item" data-equipment="boomtruck">
+        Boom Truck Crane
       </div>
     </div>
+
   </main>
 
   <footer>
@@ -50,6 +61,6 @@
   </footer>
 
   <!-- Link to JavaScript -->
-  <script src="script.js"></script>
+  <script src="inspections.js"></script>
 </body>
 </html>

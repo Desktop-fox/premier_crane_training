@@ -2,191 +2,356 @@
    General Reset / Base Styles
 ========================================= */
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+  padding: 20px;
+}
+
+/* =========================================
+   Container for the Entire Page
+========================================= */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  margin-top: 20px;
+  font-size: 1.8em;
+}
+
+/* =========================================
+   Top Inspection Info Fields
+========================================= */
+.inspection-info {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 20px;
+  row-gap: 15px;
+  margin-bottom: 30px;
+}
+
+.inspection-info label {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.inspection-info input {
+  padding: 6px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* =========================================
+   Table Styles
+========================================= */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+/* Sticky header */
+thead th {
+  background-color: #f2f2f2;
+  text-align: left;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+th, td {
+  border: 1px solid #ccc;
+  padding: 8px;
+  vertical-align: middle;
+}
+
+/* Section header (main categories) */
+.section-header td {
+  background-color: #0077b6;
+  color: #fff;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+/* Sub-header (subcategories) */
+.sub-header td {
+  background-color: #00b4d8;
+  color: #fff;
+  font-weight: bold;
+}
+
+/* Column widths (Adjust as needed) */
+td:nth-child(1) {
+  width: 16%;
+}
+td:nth-child(2) {
+  width: 34%;
+}
+td:nth-child(3),
+td:nth-child(4),
+td:nth-child(5) {
+  width: 5%;
+}
+td:nth-child(6) {
+  width: 20%;
+}
+td:nth-child(7) {
+  width: 15%;
+}
+
+/* Checkbox styling */
+input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  transform: translateY(3px);
+}
+
+/* Text inputs in table cells */
+input[type="text"] {
+  width: 95%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+/* =========================================
+   Photo Buttons
+========================================= */
+.photo-buttons {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 6px;
+  align-items: center;
+}
+.photo-buttons > div {
+  display: flex;
+  align-items: center;
+}
+.image-loaded {
+  margin-left: 5px;
+}
+
+/* Camera & Upload Buttons */
+.camera-button,
+.upload-button {
+  background: transparent;
+  border: 1px solid #0077b6;
+  border-radius: 4px;
+  cursor: pointer;
+  padding: 4px 6px;
+  font-size: 1em;
+}
+.camera-button:hover,
+.upload-button:hover {
+  background-color: #e0f7ff;
+}
+
+/* Optional preview styling */
+.photo-preview {
+  display: block;
+  margin-top: 5px;
+  max-width: 80px;
+  max-height: 80px;
+  border: 1px solid #999;
+  border-radius: 4px;
+}
+
+/* =========================================
+   Signature & Email Section
+========================================= */
+.signature-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-bottom: 20px;
+  padding: 30px 0px 10px 25px;
+}
+
+.signature-section > div {
+  display: flex;
+  flex-direction: column;
+  min-width: 350px;
+}
+
+.signature-section label {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.signature-section input {
+  padding: 6px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.email-section {
+  margin-bottom: 20px;
+}
+
+.email-section p {
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.email-inputs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 20px;
+  row-gap: 15px;
+}
+
+.email-inputs label {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.email-inputs input {
+  padding: 6px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* =========================================
+   Submit Section
+========================================= */
+.submit-section {
+  text-align: center;
+  margin-top: 20px;
+}
+
+button[type="submit"] {
+  background-color: #0077b6;
+  color: #fff;
+  border: none;
+  padding: 12px 24px;
+  cursor: pointer;
+  font-size: 1em;
+  border-radius: 4px;
+}
+
+button[type="submit"]:hover {
+  background-color: #005f8a;
+}
+
+.box {
+  border: 2px solid #005f8a; /* Border for the box */
+  padding: 10px;         /* Space inside the box */
+  width: auto;          /* Width of the box */
+  background-color: #f9f9f9; /* Light gray background */
+  border-radius: 8px;    /* Rounded corners */
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1); /* Drop shadow */
+  font-family: Arial, sans-serif; /* Font style */
+}
+
+.box-2 {
+  border: 2px solid #005f8a; /* Border for the box */
+  padding: 15px;         /* Space inside the box */
+  width: auto;          /* Width of the box */
+  background-color: #f9f9f9; /* Light gray background */
+  border-radius: 8px;    /* Rounded corners */
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1); /* Drop shadow */
+  font-family: Arial, sans-serif; /* Font style */
+  margin-bottom: 20px;
+  margin-top: 0px;
+}
+
+ul {
+  list-style-type: square; /* Changes bullet style to squares */
+  padding-left: 20px;      /* Adds spacing to the left */
+}
+
+h2 {
+  padding-bottom: 5px;
+}
+/* Add this to your existing CSS */
+#newFileBtn {
+  background-color: #ff6347; /* Tomato color */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 1em;
+  border-radius: 4px;
+  margin-right: 10px;
+}
+
+#newFileBtn:hover {
+  background-color: #ff4500; /* OrangeRed color */
+}
+
+#loadJsonBtn {
+  background-color: #5947ff; /* Tomato color */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 1em;
+  border-radius: 4px;
+  margin-right: 10px;
+}
+
+#loadJsonBtn:hover {
+  background-color: #5947ff; /* OrangeRed color */
+}
+
+/* -----------------------------------------
+   1) Header Container in a Single Row
+   ----------------------------------------- */
+   .header-container {
+    display: flex;                /* Make it a flex container */
+    align-items: center;          /* Vertically center items in the row */
+    justify-content: center;      /* Center the entire row content horizontally */
+    margin-bottom: 20px; 
   }
   
-  body {
-    font-family: Arial, sans-serif;
-    background-color: #f5f5f5;
-    padding: 20px;
+  /* -----------------------------------------
+     2) Left Column for the Two Buttons
+     ----------------------------------------- */
+  .header-left {
+    display: flex;                /* Also a flex container */
+    flex-direction: column;       /* Stack buttons top-to-bottom */
+    align-items: flex-start;      /* Align them on the left edge */
+    margin-right: 20px;           /* Space between buttons and the h1 */
   }
   
-  /* =========================================
-     Container for the Entire Page
-  ========================================= */
-  .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    background-color: #fff;
-    border: 1px solid #ccc;
-    padding: 20px;
+  /* -----------------------------------------
+     3) Make Sure <h1> is Neat
+     ----------------------------------------- */
+  .header-container h1 {
+    margin: 0;                    /* Remove default browser margin */
+    text-align: center;           /* Ensure text stays centered in its flex item */
   }
-  
-  h1 {
-    text-align: center;
-    margin-bottom: 20px;
-    font-size: 1.8em;
-  }
-  
-  /* =========================================
-     Top Inspection Info Fields
-  ========================================= */
-  .inspection-info {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    column-gap: 20px;
-    row-gap: 15px;
-    margin-bottom: 20px;
-  }
-  
-  .inspection-info label {
-    margin-bottom: 5px;
-    font-weight: bold;
-  }
-  
-  .inspection-info input {
-    padding: 6px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
-  
-  /* =========================================
-     Table Styles
-  ========================================= */
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-bottom: 20px;
-  }
-  
-  /* Sticky header */
-  thead th {
-    background-color: #f2f2f2;
-    text-align: left;
-    position: sticky;
-    top: 0;
-    /* Make sure the header appears on top when scrolling */
-    z-index: 999;
-    /* Add a slight border or box-shadow if desired */
-  }
-  
-  th, td {
-    border: 1px solid #ccc;
-    padding: 8px;
-    vertical-align: middle;
-  }
-  
-  /* Section header (main categories) */
-  .section-header td {
-    background-color: #0077b6;
-    color: #fff;
-    font-weight: bold;
-    font-size: 1rem;
-  }
-  
-  /* Sub-header (subcategories) */
-  .sub-header td {
-    background-color: #00b4d8;
-    color: #fff;
-    font-weight: bold;
-  }
-  
-  /* Make first column a bit narrower (optional) */
-  td:nth-child(1) {
-    width: 17%;
-  }
-  td:nth-child(2) {
-    width: 33%;
-  }
-  td:nth-child(3),
-  td:nth-child(4),
-  td:nth-child(5) {
-    width: 5%;
-  }
-  td:nth-child(6) {
-    width: 20%;
-  }
-  td:nth-child(7) {
-    width: 5%;
-  }
-  
-  /* Checkbox styling */
-  input[type="checkbox"] {
-    width: 18px;
-    height: 18px;
-    cursor: pointer;
-    transform: translateY(3px);
-  }
-  
-  /* Text inputs in table cells */
-  input[type="text"] {
-    width: 95%;
-    padding: 4px;
-    border: 1px solid #ccc;
-    border-radius: 3px;
-  }
-  
-  /* =========================================
-     Camera Button
-  ========================================= */
-  .camera-button {
-    background: transparent;
-    border: none;
-    font-size: 1.2em; /* Increase size if you'd like */
-    cursor: pointer;
-  }
-  .camera-button:hover {
-    opacity: 0.7;
-  }
-  
-  /* =========================================
-     Signature & Email Section
-  ========================================= */
-  .signature-section {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    margin-bottom: 20px;
-  }
-  
-  .signature-section > div {
-    display: flex;
-    flex-direction: column;
-    min-width: 220px;
-  }
-  
-  .signature-section label {
-    margin-bottom: 5px;
-    font-weight: bold;
-  }
-  
-  .signature-section input {
-    padding: 6px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
-  
-  /* =========================================
-     Submit Section
-  ========================================= */
-  .submit-section {
-    text-align: center;
-    margin-top: 20px;
-  }
-  
-  button[type="submit"] {
-    background-color: #0077b6;
-    color: #fff;
-    border: none;
-    padding: 12px 24px;
-    cursor: pointer;
-    font-size: 1em;
-    border-radius: 4px;
-  }
-  
-  button[type="submit"]:hover {
-    background-color: #005f8a;
-  }
-  
+  /* Center the H1 in the container */
+.container h1 {
+  text-align: center;
+  margin-bottom: 20px; /* Space below the heading */
+}
+
+/* A small flex container for the two top buttons */
+.top-buttons {
+  display: flex;       /* Place the buttons side-by-side */
+  gap: 20px;           /* Spacing between "New File" & "Load File" */
+  margin-bottom: 30px; /* Extra space before the "Owner" field starts */
+}
+
+/* (Optional) If you want the buttons flush with the container’s left edge, 
+   no extra margin is needed; 
+   otherwise, you could add something like: 
+   margin-left: 0; 
+   or a small left padding. */
+
+/* You already have custom styles for #newFileBtn and #loadJsonBtn; 
+   they will still apply here. Just keep them if you like. */
